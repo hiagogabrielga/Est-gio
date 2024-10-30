@@ -8,3 +8,7 @@
     --cor-clara: #F0F2EF;
     font-family: 'Roboto', sans-serif;
 }
+
+body{
+    background-color: var();
+}
