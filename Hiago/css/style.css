@@ -1,0 +1,14 @@
+:root{
+    --verde: #2BD83C;
+    --verde-musgo-claro: #285943;
+    --verde-musgo-escuro: #002400;
+    --verde-claro: #86E990;
+    --verde-limao: #A1FF7E;
+    --cor-escura: #0C0C0C;
+    --cor-clara: #F0F2EF;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background-color: var();
+}
