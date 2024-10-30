@@ -1,0 +1,13 @@
+*{
+    padding: 0;
+    margin: 0;
+};
+
+body{
+    /* background-image: url(imagens/image.png); */
+    background-color: yellow;
+    border:  1px solid black;
+};
+
+
+
