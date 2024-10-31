@@ -10,6 +10,10 @@
 }
 
 body {
+    /*background-image: url('../../imagens/Vilhena-751x420.png');
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center; */
     background-color: #444444;
     display: flex;
     flex-direction: column;
@@ -43,8 +47,18 @@ body {
     position: relative;
     display: flex;
     flex-direction: column;
-    height: 60vh;
     margin: auto;
+}
+
+.campo-input{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+#fomulario-cria-conta{
+    height: 65vh;
 }
 
 input{
@@ -76,6 +90,8 @@ input{
     color: white;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    height: 20vh;
     margin: auto;
     font-size: 20px;
 }
