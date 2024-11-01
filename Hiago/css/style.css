@@ -16,25 +16,42 @@ body {
     background-position: center; */
     background-color: #444444;
     display: flex;
-    flex-direction: column;
 }
 
-.decoracao-telas-login {
+main{
+    display: flex;
+}
+
+#imagem-fundo-container {
+    width: 100%;
+    height: 100%;
     position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url('../../imagens/Vilhena-751x420.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-.decoracao {
-    position: relative;
+#imagem-fundo-desktop {
+    display: none; /* Esconde a imagem original */
 }
+
 
 #logo {
-    width: 150px;
+    width: 300px;
     position: relative;
     margin: 40px auto;
 }
 
-#imagem-fundo {
-    position: absolute;
+.estilo-fundo-formulario{
+    background-color: #2bd83c48;
+    position: relative;
+    display: flex;
+    border-radius: 0px 20px 20px 0px;
+    width: 50vw;
+    height: 100vh;
 }
 
 .estilo-tela-login {
@@ -44,10 +61,10 @@ body {
 }
 
 #fomulario-cria-conta{
-    position: relative;
     display: flex;
     flex-direction: column;
     margin: auto;
+    height: 65vh;
 }
 
 .campo-input{
@@ -56,11 +73,6 @@ body {
     flex-direction: column;
     margin: auto;
 }
-
-#fomulario-cria-conta{
-    height: 65vh;
-}
-
 input{
     background-color: var(--cor-clara);
     height: 49px;
@@ -99,7 +111,7 @@ input{
 .barras{
     display: flex;
     justify-content: space-around;
-    width: 90vw;
+    width: 40vw;
     margin: auto;
 }
 
@@ -108,4 +120,80 @@ input{
     width: 30%;
     border-radius: 20px;
     height: 10px;
+}
+
+.barra:first-child{
+    background-color: #ffffff;
+}
+
+.titulo-e-eslogam{
+    position: relative;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+
+.titulo-e-eslogam>h2{
+    font-size: 26px;
+}
+
+.campo-imagem-logo{
+    width: 50%;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+}
+
+.campo-conteudo{
+    display: flex;
+    justify-content: space-around;
+    width: 100vw;
+}
+
+.decoracao-mobile{
+    display: none;
+    position: relative;
+}
+
+.decoracao-telas-login {
+    position: absolute;
+    width: 100%;
+}
+
+.decoracao {
+    position: relative;
+}
+
+#logo-mobile {
+    width: 150px;
+    position: relative;
+    display: none;
+    margin: 40px auto;
+}
+
+@media screen and (max-width: 700px){
+    .campo-imagem-logo{
+        display: none;
+    }
+    .estilo-fundo-formulario{
+        background-color: transparent;
+        width: 89vw;
+    }
+
+    .decoracao-mobile{
+        display: block;
+    }
+
+    #fomulario-cria-conta{
+        margin: 0 auto;
+        height: 85vh;
+    }
+
+    #logo-mobile{
+        display: block;
+    }
+
+    .barras{
+        width: 80vw;
+    }
 }
