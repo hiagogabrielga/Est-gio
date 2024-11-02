@@ -1,0 +1,84 @@
+@import url(styleBase.css);
+
+.campo-verificacao{
+    background-color: var(--verde-limao);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 60%;
+    border-radius: 10px;
+    margin: 0 auto 20px;
+    padding: 5%;
+    height: 100%;
+}
+
+.input-codigo{
+    width: 35px;
+    height: 41px;
+    border-radius: 10px;
+    border: 0.5px solid;
+}
+
+#inputs-codigo-verificacao{
+    display: flex;
+    justify-content: space-around;
+}
+
+#span-endereco-email{
+    font-weight: bold;
+}
+
+#campo-botoes-de-solucao{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 35%;
+}
+
+.botoes-de-solucao{
+    background-color: var(--verde);
+    width: 75%;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+    text-align: left;
+    padding-left: 12px;
+}
+
+#botao-verificar{
+    color: white;
+    background-color: var(--verde);
+    box-shadow:  0px 0px 10px var(--verde);
+    width: 157px;
+    height: 30px;
+    border: none;
+    border-radius: 20px;
+    font-size: large;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 700px) {
+    .input-codigo{
+        width: 50px;
+        height: 60px;
+    }
+
+    .botoes-de-solucao{
+        width: 70%;
+    }
+
+    .campo-verificacao{
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 430px){
+    .botoes-de-solucao{
+        width: 90%;
+    }  
+
+    .input-codigo{
+        width: 35px;
+        height: 41px;
+    }
+}

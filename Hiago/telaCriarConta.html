@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cidanania ativa</title>
+    <link rel="stylesheet" href="css/styleBase.css">
+    <link rel="stylesheet" href="css/styleCampoDadosBasicos.css">
+    <link rel="stylesheet" href="css/styleCampoVerificacaoEmail.css">
+    <link rel="stylesheet" href="css/styleCampoLocalizacaoImagem.css">
+    <link rel="stylesheet" href="css/reset.css">
+</head>
+
+<body>
+    <main>
+        <div id="imagem-fundo-container">
+            <img id="imagem-fundo-desktop" src="../../imagens/Vilhena-751x420.png" alt="Imagem de fundo">
+            <div class="decoracao-mobile">
+                <div class="decoracao">
+                    <img class="decoracao-telas-login" src="../imagens/Rectangle 5.png" alt="">
+                    <img class="decoracao-telas-login" src="../imagens/Rectangle 6.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="campo-conteudo">
+            <div class="estilo-fundo-formulario">
+                <form action="*" id="fomulario-cria-conta">
+                    <img id="logo-mobile" src="../imagens/Cidadania Ativa.png" alt="Logo Cidadania Ativa">
+                    <div class="campo-input-dados-basicos" style="display: none;">
+                        <input class="input-dados-basicos" type="text" placeholder="Nome" id="input-nome">
+
+                        <input class="input-dados-basicos" type="email" id="input-email" placeholder="Email">
+
+                        <input class="input-dados-basicos" type="password" id="input-senha" placeholder="Senha">
+
+                        <input class="input-dados-basicos" type="password" id="input-confirmacao" placeholder="Confirmar senha">
+                    </div>
+
+                    <div class="campo-verificacao">
+                        <div id="texto-campo-verificacao">
+                            <h3>Foi enviado um código para o Email <span id="span-endereco-email">adoadoado</span>, adicione este
+                                códigoa a baixo</h3>
+                        </div>
+                        <div id="inputs-codigo-verificacao">
+                            <input class="input-codigo" type="number">
+                            <input class="input-codigo" type="number" disabled>
+                            <input class="input-codigo" type="number" disabled>
+                            <input class="input-codigo" type="number" disabled>
+                            <input class="input-codigo" type="number" disabled>
+                        </div>
+                        <div id="campo-botoes-de-solucao">
+                            <button class="botoes-de-solucao" id="botao-nao-acesso-email">Não tenho acesso a esse email</button>
+                            <button class="botoes-de-solucao" id="botao-enviar-novamente">Enviar o código novamente</button>
+                        </div>
+                        <div class="">
+
+                        </div>
+                        <button id="botao-verificar">verificar</button>
+                    </div>
+
+                    <div class="campo-adicionar-localizacao-e-imagem">
+                        
+                    </div>
+
+                    <div class="etapas-descricao">
+                        <h3>Etapa <span id="numero-etapa"></span> de 3</h3>
+                        <div class="barras">
+                            <div class="barra"></div>
+                            <div class="barra"></div>
+                            <div class="barra"></div>
+                        </div>
+                    </div>
+                    <button class="botao-proximo">Próximo</button>
+                </form>
+            </div>
+            <div class="campo-imagem-logo">
+                <img id="logo" src="../imagens/logoSemNome.png" alt="">
+                <div class="titulo-e-eslogam">
+                    <h2>Cidadania Ativa</h2>
+                    <h3>Sua voz, nossa cidade: juntos por um lugar melhor!</h3>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+</html>

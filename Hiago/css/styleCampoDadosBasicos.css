@@ -1,0 +1,18 @@
+@import url(styleBase.css);
+.campo-input-dados-basicos{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+.input-dados-basicos{
+    background-color: var(--cor-clara);
+    height: 49px;
+    width: 268px;
+    border-radius: 20px;
+    padding: 0 10px 0 10px;
+    font-size: 14px;
+    border: none;
+    margin: 10px 0;
+    align-items: center;
+}
