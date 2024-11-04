@@ -32,8 +32,14 @@ body{
 
     
 }
-
-/***********login*****************/
+h1{
+    color: #000000 ;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 5rem;
+    
+}
 form{
     /* width: 100vw;
     max-width: 400px;
@@ -56,10 +62,12 @@ form{
     height: 50vh;
     padding: 2rem;
     background-color: var(--verde-limao);
+    border-radius: 1rem;
 }
 .senha, .cf_senha{
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 .senha input, .cf_senha input{  
     padding: 1rem;
@@ -71,6 +79,15 @@ form{
     background-color: var(--cor-clara);
     font-size: 1.5rem;
     margin-bottom: 1rem;
+    padding: 1rem;
+}
+.senha i , .cf_senha i {
+    font-size: 1.7rem;
+    cursor: pointer;
+    position: absolute;
+    right: 1.5rem;
+    top: 1rem;
+    color: #000000;
 }
 .senha ::placeholder, .cf_senha::placeholder{
     color:#0c0c0cc3;
@@ -83,8 +100,8 @@ form{
     text-decoration: none;
 }
 
-#botao{
-    margin-left: 5rem;
+.botao{
+    margin-left: 6rem;
     width: 12rem;
     background-color: var(--verde);
     padding: 9px 59px;
@@ -92,7 +109,7 @@ form{
     border: none;
     border-radius: 1.5rem;
     color: var(--cor-clara);
-    margin-bottom: 1rem;
+    margin-top: 1rem;
     box-shadow:  0px 0px 10px var(--verde);
 }
 
