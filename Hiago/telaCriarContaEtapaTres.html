@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cidanania ativa</title>
+    <title>Cidadania Ativa</title>
     <link rel="stylesheet" href="css/styleBase.css">
-    <link rel="stylesheet" href="css/styleCampoLocalizacaoImagem.css ">
+    <link rel="stylesheet" href="css/styleCampoLocalizacaoImagem.css">
     <link rel="stylesheet" href="css/reset.css">
 </head>
 
@@ -23,18 +23,23 @@
         </div>
         <div class="campo-conteudo">
             <div class="estilo-fundo-formulario">
-                <form action="*" id="fomulario-cria-conta">
+                <form action="*" id="formulario-cria-conta">
                     <img id="logo-mobile" src="../imagens/Cidadania Ativa.png" alt="">
                     <div class="campo-input">
                         <div>
                             <input type="text" placeholder="CEP">
-                            <button>Localização atual</button>
+                            <button type="button">Localização atual</button>
                         </div>
                         <div>
                             <h3>Tire uma foto para seu perfil</h3>
-                            <input type="file" name="" id="">
+                            <video autoplay></video>
+                            <canvas></canvas>
+                            <button type="button" id="startButton" onclick="iniciarGravacao()">Iniciar</button>
+                            <button type="button" id="buttonFoto" style="display: none;" onclick="tirarFoto()">Tirar Foto</button>
+                            <button type="button" id="stopButton" style="display: none;" onclick="pararGravacao()">Sair</button>
+                            <button type="button" id="excluirImagem" style="display: none;" onclick="deletarImagem()">Deletar</button>
+                            <button type="button" id="finalizar" style="display: none;" onclick="finalizarFoto()">Finalizar</button>
                         </div>
-                        
                     </div>
                     <div class="etapas-descricao">
                         <h3>Etapa 3 de 3</h3>
@@ -44,7 +49,7 @@
                             <div class="barra" id="barra-ativa"></div>
                         </div>
                     </div>
-                    <button class="botao-proximo">Próximo</button>
+                    <button type="submit" class="botao-proximo">Próximo</button>
                 </form>
             </div>
             <div class="campo-imagem-logo">
@@ -53,13 +58,21 @@
                     <h2>Cidadania Ativa</h2>
                     <h3>Sua voz, nossa cidade: juntos por um lugar melhor!</h3>
                 </div>
-    
             </div>
         </div>
     </main>
     <footer>
-
     </footer>
+    <script>
+        document.querySelectorAll('#formulario-cria-conta input').forEach(input => {
+            input.addEventListener('keydown', function(event) {
+                if (event.key === 'Enter') {
+                    event.preventDefault();
+                }
+            });
+        });
+    </script>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>

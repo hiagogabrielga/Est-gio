@@ -66,7 +66,7 @@ function deletarImagem() {
     }
 }
 
-function finalizar() {
+function finalizarFoto() {
     if (verificarCanvas() == true) {
         document.querySelector('#startButton').style.display = "block"
         document.querySelector('#buttonFoto').style.display = "none"
@@ -76,5 +76,4 @@ function finalizar() {
     } else {
         alert("não tem imagem");
     }
-
 }

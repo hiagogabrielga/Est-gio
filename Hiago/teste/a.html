@@ -3,12 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Video Stream</title>
 </head>
 <body>
     <video autoplay></video>
     <canvas></canvas>
-    <button>Tirar foto</button>
+    <button id="startButton" onclick="iniciarGravacao()">Iniciar</button>
+    <button id="buttonFoto" style="display: none;" onclick="tirarFoto()">tirar foto</button>
+    <button id="stopButton" style="display: none;" onclick="pararGravacao()">Sair</button>
+    <button id="excluirImagem" style="display: none;" onclick="deletarImagem()">Delete</button>
+    <button id="finalizar" style="display: none;" onclick="finalizar()">Finalizar</button>
+
     <script src="./script.js"></script>
 </body>
 </html>
