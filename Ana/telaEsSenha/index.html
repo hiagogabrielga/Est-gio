@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cidanania ativa</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../../../codigoBase/telasDeCriaLogarconta/reset.css">
     <link rel="stylesheet" href="../../../codigoBase/telasDeCriaLogarconta/styleCodigoBase.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="script.js">
     
 </head>
 
@@ -41,15 +43,16 @@
             <div class="caixaPai">
                 <h1>Crie sua nova senha</h1>
                 <div class="senha">
-                    <input type="password" name="password" required placeholder="Senha">                    
+                    <input type="password" id="senha" required placeholder="Senha"> 
+                    <i class="bi bi-eye-fill" id="btn_senha" onclick="mostrarSenha()"></i>                   
                 </div>
                 <div class="cf_senha">
-                    <input type="password" name="password" required placeholder="Confimar senha">                    
-                </div>
-    
-                <input type="submit" id="botao" value="Pronto">                
-                
+                    <input type="password" id="senha" placeholder="Confimar senha" >        
+                    <i class="bi bi-eye-fill" id="btn_senha" onclick="mostrarSenha()"></i>            
+                </div>                
             </div>
+            <button class="botao"> Pronto </button>
+                
         </form>
         <script src="script.js"></script>
     </main>
