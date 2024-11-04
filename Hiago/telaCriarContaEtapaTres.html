@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cidanania ativa</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styleBase.css">
+    <link rel="stylesheet" href="css/styleCampoLocalizacaoImagem.css ">
     <link rel="stylesheet" href="css/reset.css">
 </head>
 
@@ -25,10 +26,15 @@
                 <form action="*" id="fomulario-cria-conta">
                     <img id="logo-mobile" src="../imagens/Cidadania Ativa.png" alt="">
                     <div class="campo-input">
-                        <input type="text" placeholder="Nome">
-                        <input type="email" name="" id="" placeholder="Email">
-                        <input type="password" name="" id="" placeholder="Senha">
-                        <input type="password" name="" id="" placeholder="Confirmar senha">
+                        <div>
+                            <input type="text" placeholder="CEP">
+                            <button>Localização atual</button>
+                        </div>
+                        <div>
+                            <h3>Tire uma foto para seu perfil</h3>
+                            <input type="file" name="" id="">
+                        </div>
+                        
                     </div>
                     <div class="etapas-descricao">
                         <h3>Etapa 3 de 3</h3>
