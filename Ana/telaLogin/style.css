@@ -17,53 +17,46 @@
 
 
 body{
-    height: 100%;
+    width: 100%;
     background-color: #444444;
     background-repeat: no-repeat ;
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
     display: flex;
-    justify-content: flex-start;
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
     font-family: 'Roboto', sans-serif;
 
     
 }
+
+/***********login*****************/
+#fomulario-login{
+    display: flex;
+    margin: auto;
+    
+} 
 .caixaPai{
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    position: absolute;
-    height: 100vh;
-    padding: 2rem;
+    height: 50vh;
+    justify-content:center;
+    margin-top: 10rem;
 
 }
-/***********login*****************/
-form{
-    width: 100vw;
-    max-width: 400px;
-    display: flex;
-    justify-content: flex-start;
-
-    display: flex;
-    flex-direction: column;
-    /* padding-inline: 4rem ; */
-    gap: 0.5rem;
-} 
+#h1-login{
+    color: var(--cor-clara);
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
 .email, .senha{
     display: flex;
     flex-direction: column;
     position: relative;
+    
 }
 .email input, .senha input{  
     padding: 1rem;
     border-radius: 1.5rem;
     border: none;
     outline: none;
-    /* left: 15px; */
     top: 0;
     background-color: var(--cor-clara);
     font-size: 1.5rem;
@@ -84,13 +77,11 @@ form{
 .eq_senha{
     font-size: 1rem;
     color: var(--cor-clara);
-    display: flex;
     margin-bottom: 1rem;
     text-decoration: none;
 }
 
 .botao{
-    margin-left: 5rem;
     width: 12rem;
     background-color: var(--verde);
     padding: 9px 59px;
@@ -98,13 +89,13 @@ form{
     border: none;
     border-radius: 1.5rem;
     color: var(--cor-clara);
-    margin-bottom: 1rem;
+    margin:auto;
     box-shadow:  0px 0px 10px var(--verde);
 }
 
 #nao_ct, .nao_ct{
-    font-size: 18px;
+    font-size: 1rem;
     color: var(--cor-clara);
-    display: flex;
-    margin-bottom: 15px;
+    
 }
+

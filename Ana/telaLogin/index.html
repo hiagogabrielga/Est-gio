@@ -25,8 +25,28 @@
         </div>
         <div class="campo-conteudo">
             <div class="estilo-fundo-formulario">
-                <form action="*" id="fomulario">
+                <form action="*" id="fomulario-login">
                     <img id="logo-mobile" src="../../../imagens/Cidadania Ativa.png" alt="">
+                    <div class="caixaPai">
+                        <h1 id="h1-login">LOGIN</h1>
+                        <div class="email">
+                            <input type="email" name="" required placeholder="E-mail"> 
+                            <i class="bi bi-envelope-fill"></i>                  
+                        </div>
+        
+                        <div class="senha">
+                            <input type="password" id="senha" required placeholder="Senha"> 
+                            <i class="bi bi-eye-fill" id="btn_senha" onclick="mostrarSenha()"></i>                   
+                        </div>
+                        <div>
+                            <a href="#" class="eq_senha">Esqueci a senha.</a>    
+                        </div>
+                        <button  class="botao" > Entrar</button>               
+                        <div class="nao_ct">
+                            <span>Não tem conta?</span>
+                            <a href="#" id="nao_ct"> Crie agora mesmo</a>    
+                        </div>
+                    </div>
                 </form>
             </div>
             <div class="campo-imagem-logo">
@@ -38,27 +58,6 @@
     
             </div>
         </div>
-        <form >
-            <div class="caixaPai">
-                <div class="email">
-                    <input type="email" name="" required placeholder="E-mail"> 
-                    <i class="bi bi-envelope-fill"></i>                  
-                </div>
-
-                <div class="senha">
-                    <input type="password" id="senha" required placeholder="Senha"> 
-                    <i class="bi bi-eye-fill" id="btn_senha" onclick="mostrarSenha()"></i>                   
-                </div>
-                <div>
-                    <a href="#" class="eq_senha">Esqueci a senha.</a>    
-                </div>
-                <button  class="botao" > Entrar</button>               
-                <div class="nao_ct">
-                    <span>Não tem conta?</span>
-                    <a href="#" id="nao_ct"> Crie agora mesmo</a>    
-                </div>
-            </div>
-        </form>
         <script src="script.js"></script>
     </main>
     <footer>
