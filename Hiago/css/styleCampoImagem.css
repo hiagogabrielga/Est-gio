@@ -1,0 +1,49 @@
+@import url(styleBase.css);
+
+#startButton{
+    height: 160px;
+    width: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px dashed black;
+    border-radius: 100%;
+}
+
+#icone-camera{
+    color: black;
+    font-size: 140%;
+    font: 10px;
+}
+
+#div-iconCamera{
+    width: 104px;
+    text-align: left;
+}
+
+#campo-adicionar-imagem{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+    height: 50%;
+    justify-content: space-around;
+}
+
+#botaoIniciar{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#botaoIniciar>h2{
+    margin: 0px 0px 12px;
+    font-size: 20px;
+    color: white;
+}
+
+#campoVisualizacao{
+    flex-direction: column;
+}

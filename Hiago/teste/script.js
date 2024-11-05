@@ -38,7 +38,7 @@ function pararGravacao() {
         video.srcObject = null;
     }
     document.querySelector('#finalizar').style.display = "block"
-    document.querySelector('#startButton').style.display = "block"
+    document.querySelector('#startButton').style.display = "flex"
     document.querySelector('#stopButton').style.display = "none"
     document.querySelector('#buttonFoto').style.display = "none"
 
@@ -68,7 +68,7 @@ function deletarImagem() {
 
 function finalizar() {
     if (verificarCanvas() == true) {
-        document.querySelector('#startButton').style.display = "block"
+        document.querySelector('#startButton').style.display = "flex"
         document.querySelector('#buttonFoto').style.display = "none"
         document.querySelector('#stopButton').style.display = "none"
         document.querySelector('#excluirImagem').style.display = "none"

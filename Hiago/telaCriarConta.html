@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/styleBase.css">
     <link rel="stylesheet" href="css/styleCampoDadosBasicos.css">
     <link rel="stylesheet" href="css/styleCampoVerificacaoEmail.css">
-    <link rel="stylesheet" href="css/styleCampoLocalizacaoImagem.css">
+    <link rel="stylesheet" href="css/styleCampoImagem.css">
     <link rel="stylesheet" href="css/reset.css">
 </head>
 
@@ -37,7 +37,7 @@
                         <input class="input-dados-basicos" type="password" id="input-confirmacao" placeholder="Confirmar senha">
                     </div>
 
-                    <div class="campo-verificacao">
+                    <div class="campo-verificacao" style="display: none;">
                         <div id="texto-campo-verificacao">
                             <h3>Foi enviado um código para o Email <span id="span-endereco-email">adoadoado</span>, adicione este
                                 códigoa a baixo</h3>
@@ -58,14 +58,29 @@
                         </div>
                         <button id="botao-verificar">verificar</button>
                     </div>
-
-                    <div class="campo-adicionar-localizacao-e-imagem">
-                        
+                    <div id="campo-adicionar-imagem">
+                        <div id="botaoIniciar">
+                            <h2>Tire uma foto para seu perfil</h2>
+                            <button type="button" id="startButton" onclick="iniciarGravacao()">
+                                <div id="div-iconCamera">
+                                    <img src="../imagens/iconeCamera.png" alt="Icone de Câmera">
+                                </div>
+                            </button>
+                        </div>
+                        <div id="campoVisualizacao" style="display: none;">
+                            <video autoplay style="display: none;"></video>
+                            <canvas style="display: none;"></canvas>
+                            <button type="button" id="buttonFoto" style="display: none;" onclick="tirarFoto()">Tirar Foto</button>
+                            <button type="button" id="stopButton" style="display: none;" onclick="pararGravacao()">Sair</button>
+                            <button type="button" id="excluirImagem" style="display: none;" onclick="deletarImagem()">Deletar</button>
+                            <button type="button" id="finalizar" style="display: none;" onclick="finalizarFoto()">Finalizar</button>
+                        </div>
                     </div>
 
                     <div class="etapas-descricao">
-                        <h3>Etapa <span id="numero-etapa"></span> de 3</h3>
+                        <h3>Etapa <span id="numero-etapa"></span> de 4</h3>
                         <div class="barras">
+                            <div class="barra"></div>
                             <div class="barra"></div>
                             <div class="barra"></div>
                             <div class="barra"></div>
@@ -87,6 +102,16 @@
     <footer>
 
     </footer>
+    <script>
+        document.querySelectorAll('#formulario-cria-conta input').forEach(input => {
+            input.addEventListener('keydown', function(event) {
+                if (event.key === 'Enter') {
+                    event.preventDefault();
+                }
+            });
+        });
+    </script>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
