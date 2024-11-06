@@ -15,23 +15,28 @@ function verificarCanvas() {
 
 function iniciarGravacao() {
     verificarCanvas();
-    navigator.mediaDevices.getUserMedia({ video: true })
+    navigator.mediaDevices.getUserMedia({ video: { width: 300, height: 300 } })
         .then(s => {
             stream = s;
             video.srcObject = stream;
             video.play();
+            video.style.borderRadius = '100%'
             document.querySelector("#botaoIniciar").style.display = "none";
+            document.querySelector("#campoVisualizacao").style.position = "absolute";
             document.querySelector("#campoVisualizacao").style.display = "flex";
             document.querySelector('video').style.display = "block";
             document.querySelector('#finalizar').style.display = "none";
             document.querySelector('#startButton').style.display = "none";
             document.querySelector('#buttonFoto').style.display = "block";
             document.querySelector('#stopButton').style.display = "block";
+            document.querySelector('.etapas-descricao').style.display = "none";
         })
         .catch(error => {
             console.log(error);
+            alert("Não foi possível acessar sua câmera.")
         });
 }
+
 
 function pararGravacao() {
     verificarCanvas();
@@ -41,8 +46,8 @@ function pararGravacao() {
     }
     document.querySelector('#finalizar').style.display = "block";
     document.querySelector('#startButton').style.display = "flex";
-    document.querySelector('#stopButton').style.display = "none";
-    document.querySelector('#buttonFoto').style.display = "none";
+    //document.querySelector('#stopButton').style.display = "none";
+    //document.querySelector('#buttonFoto').style.display = "none";
     document.querySelector('video').style.display = "none";
     document.querySelector('canvas').style.display = "block";
 }

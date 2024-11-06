@@ -1,6 +1,6 @@
 @import url(styleBase.css);
 
-#startButton{
+#startButton {
     height: 160px;
     width: 160px;
     display: flex;
@@ -10,18 +10,18 @@
     border-radius: 100%;
 }
 
-#icone-camera{
+#icone-camera {
     color: black;
     font-size: 140%;
     font: 10px;
 }
 
-#div-iconCamera{
+#div-iconCamera {
     width: 104px;
     text-align: left;
 }
 
-#campo-adicionar-imagem{
+#campo-adicionar-imagem {
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -30,7 +30,7 @@
     justify-content: space-around;
 }
 
-#botaoIniciar{
+#botaoIniciar {
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -38,12 +38,98 @@
     justify-content: space-around;
 }
 
-#botaoIniciar>h2{
+#botaoIniciar>h2 {
     margin: 0px 0px 12px;
     font-size: 20px;
     color: white;
 }
 
-#campoVisualizacao{
+#campoVisualizacao {
+    box-sizing: border-box;
+    display: flex;
     flex-direction: column;
+    background-color: var(--verde-claro);
+    border-radius: 0px 20px 20px 0px;
+    align-items: center;
+    width: 50vw;
+    height: 100vh;
+    top: 0;
+    padding: 2%;
+    margin: 0px auto 12px;
+}
+
+canvas {
+    border-radius: 100%;
+    width: 300px;
+    height: 300px;
+}
+
+.botoes-manipurar-foto,
+.botao-voltar,
+.botao-salvar {
+    width: 100%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.botao-salvar>button {
+    width: 60%;
+    height: 40px;
+    margin: 10% auto 0;
+    font-size: medium;
+    border-radius: 20px;
+    border: none;
+}
+
+
+.botao-tirar-e-deletar-foto {
+    display: flex;
+    margin: auto;
+    justify-content: space-around;
+    width: 80%;
+}
+
+.botao-tirar-e-deletar-foto>button,
+.botao-voltar>button {
+    width: 8rem;
+    border: none;
+    height: 40px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+    font-size: medium;
+}
+
+#buttonFoto>i,
+#excluirImagem>i,
+#stopButton>i {
+    margin-right: 5px;
+}
+
+#buttonFoto,
+#finalizar {
+    background-color: var(--verde);
+    color: white;
+    box-shadow: 0px 0px 10px var(--verde);
+
+}
+
+#excluirImagem {
+    background-color: #B51515;
+    color: white;
+    box-shadow: 0px 0px 10px #B51515;
+}
+
+
+@media screen and (max-width: 700px) {
+    #campoVisualizacao {
+        width: 100vw;
+    }
+
+
+    #campoVisualizacao {
+        border-radius: none;
+    }
+
 }
