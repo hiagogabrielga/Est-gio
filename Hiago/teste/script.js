@@ -1,80 +1,97 @@
-var video = document.querySelector('video');
-var stream;
-
-function verificarCanvas() {
-    var canvas = document.querySelector('canvas');
-    var context = canvas.getContext('2d');
-    if (context.getImageData(0, 0, canvas.width, canvas.height).data.some(channel => channel !== 0)) {
-        document.querySelector('#excluirImagem').style.display = "block"
-        return true
-    } else {
-        document.querySelector('#excluirImagem').style.display = "none"
-        return false
+(function () {
+    if (
+      !"mediaDevices" in navigator ||
+      !"getUserMedia" in navigator.mediaDevices
+    ) {
+      alert("Camera API is not available in your browser");
+      return;
     }
-}
-
-
-function iniciarGravacao() {
-    verificarCanvas()
-    navigator.mediaDevices.getUserMedia({ video: true })
-        .then(s => {
-            stream = s;
-            video.srcObject = stream;
-            video.play();
-            document.querySelector('#finalizar').style.display = "none"
-            document.querySelector('#startButton').style.display = "none"
-            document.querySelector('#buttonFoto').style.display = "block"
-            document.querySelector('#stopButton').style.display = "block"
-        })
-        .catch(error => {
-            console.log(error);
+  
+    // get page elements
+    const video = document.querySelector("#video");
+    const btnPlay = document.querySelector("#btnPlay");
+    const btnPause = document.querySelector("#btnPause");
+    const btnScreenshot = document.querySelector("#btnScreenshot");
+    const btnChangeCamera = document.querySelector("#btnChangeCamera");
+    const screenshotsContainer = document.querySelector("#screenshots");
+    const canvas = document.querySelector("#canvas");
+    const devicesSelect = document.querySelector("#devicesSelect");
+  
+    // video constraints
+    const constraints = {
+      video: {
+        width: {
+          min: 1280,
+          ideal: 1920,
+          max: 2560,
+        },
+        height: {
+          min: 720,
+          ideal: 1080,
+          max: 1440,
+        },
+      },
+    };
+  
+    // use front face camera
+    let useFrontCamera = true;
+  
+    // current video stream
+    let videoStream;
+  
+    // handle events
+    // play
+    btnPlay.addEventListener("click", function () {
+      video.play();
+      btnPlay.classList.add("is-hidden");
+      btnPause.classList.remove("is-hidden");
+    });
+  
+    // pause
+    btnPause.addEventListener("click", function () {
+      video.pause();
+      btnPause.classList.add("is-hidden");
+      btnPlay.classList.remove("is-hidden");
+    });
+  
+    // take screenshot
+    btnScreenshot.addEventListener("click", function () {
+      const img = document.createElement("img");
+      canvas.width = video.videoWidth;
+      canvas.height = video.videoHeight;
+      canvas.getContext("2d").drawImage(video, 0, 0);
+      img.src = canvas.toDataURL("image/png");
+      screenshotsContainer.prepend(img);
+    });
+  
+    // switch camera
+    btnChangeCamera.addEventListener("click", function () {
+      useFrontCamera = !useFrontCamera;
+  
+      initializeCamera();
+    });
+  
+    // stop video stream
+    function stopVideoStream() {
+      if (videoStream) {
+        videoStream.getTracks().forEach((track) => {
+          track.stop();
         });
-};
-
-function pararGravacao() {
-    verificarCanvas()
-    if (stream) {
-        stream.getTracks().forEach(track => track.stop());
-        video.srcObject = null;
+      }
     }
-    document.querySelector('#finalizar').style.display = "block"
-    document.querySelector('#startButton').style.display = "flex"
-    document.querySelector('#stopButton').style.display = "none"
-    document.querySelector('#buttonFoto').style.display = "none"
-
-}
-
-function tirarFoto() {
-
-    iniciarGravacao()
-    var canvas = document.querySelector('canvas');
-    canvas.height = video.videoHeight;
-    canvas.width = video.videoWidth;
-    var context = canvas.getContext('2d');
-    context.drawImage(video, 0, 0);
-    verificarCanvas()
-}
-
-function deletarImagem() {
-    var canvas = document.querySelector('canvas');
-    var context = canvas.getContext('2d');
-    if (verificarCanvas() == true) {
-        context.clearRect(0, 0, canvas.width, canvas.height);
-        document.querySelector('#excluirImagem').style.display = "none"
-    } else {
-        console.log("Não há imagem para deletar.");
+  
+    // initialize
+    async function initializeCamera() {
+      stopVideoStream();
+      constraints.video.facingMode = useFrontCamera ? "environment" : "user";
+  
+      try {
+        videoStream = await navigator.mediaDevices.getUserMedia(constraints);
+        video.srcObject = videoStream;
+      } catch (err) {
+        alert("Could not access the camera");
+      }
     }
-}
-
-function finalizar() {
-    if (verificarCanvas() == true) {
-        document.querySelector('#startButton').style.display = "flex"
-        document.querySelector('#buttonFoto').style.display = "none"
-        document.querySelector('#stopButton').style.display = "none"
-        document.querySelector('#excluirImagem').style.display = "none"
-        document.querySelector('#finalizar').style.display = "none"
-    } else {
-        alert("não tem imagem");
-    }
-
-}
+  
+    initializeCamera();
+  })();

@@ -62,6 +62,8 @@
                         </div>
                         <button id="botao-verificar">verificar</button>
                     </div>
+
+
                     <div id="campo-adicionar-imagem">
                         <div id="botaoIniciar">
                             <h2>Tire uma foto para seu perfil</h2>
@@ -71,27 +73,33 @@
                                 </div>
                             </button>
                         </div>
+
+
                         <div id="campoVisualizacao" style="display: none;">
                             <div class="botao-voltar">
-                                <button type="button" id="stopButton" style="display: none;"
-                                    onclick="pararGravacao()"><i class="bi bi-arrow-left"></i>Voltar</button>
+                                <button type="button" id="stopButton" onclick="pararGravacao()"><i
+                                        class="bi bi-arrow-left"></i>Voltar</button>
                             </div>
                             <video autoplay style="display: none;"></video>
                             <canvas style="display: none;"></canvas>
                             <div class="botoes-manipurar-foto">
                                 <div class="botao-tirar-e-deletar-foto">
-                                    <button type="button" id="buttonFoto" style="display: none;"
-                                        onclick="tirarFoto()"><i class="bi bi-camera"></i>Tirar Foto</button>
-                                    <button type="button" id="excluirImagem" style="display: none;"
-                                        onclick="deletarImagem()"><i class="bi bi-trash"></i>Excluir</button>
+                                    <button type="button" id="buttonFoto" onclick="tirarFoto()"><i
+                                            class="bi bi-camera"></i>Tirar Foto</button>
+                                    <button type="button" id="excluirImagem" onclick="deletarImagem()"><i
+                                            class="bi bi-trash"></i>Excluir</button>
+                                    <button id="trocarCamera" style="display: none;">Trocar Câmera</button>
                                 </div>
                                 <div class="botao-salvar">
-                                    <button type="button" id="finalizar" style="display: none;"
-                                        onclick="finalizarFoto()">Salvar</button>
+                                    <button type="button" id="finalizar" onclick="finalizarFoto()">Salvar</button>
                                 </div>
                             </div>
                         </div>
+
+                        
                     </div>
+
+
 
                     <div class="etapas-descricao">
                         <h3>Etapa <span id="numero-etapa"></span> de 4</h3>
