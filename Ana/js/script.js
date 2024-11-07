@@ -1,6 +1,6 @@
-function mostrarSenha(){
-    const inputPass = document.getElementById('senha')
-    const btnverSenha = document.getElementById('btn_senha')
+function mostrarSenha(inputId, btnId){
+    const inputPass = document.getElementById(inputId)
+    const btnverSenha = document.getElementById(btnId)
     if(inputPass.type === 'password'){
         inputPass.setAttribute('type', 'text')
         btnverSenha.classList.replace('bi-eye-fill' , 'bi-eye-slash-fill')
