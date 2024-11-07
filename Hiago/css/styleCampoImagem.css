@@ -66,12 +66,18 @@ canvas {
 }
 
 .botoes-manipurar-foto,
-.botao-voltar,
 .botao-salvar {
     width: 100%;
     margin: 20px auto;
     display: flex;
     flex-direction: column;
+}
+
+.botao-voltar{
+    width: 100%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
 }
 
 .botao-salvar>button {
