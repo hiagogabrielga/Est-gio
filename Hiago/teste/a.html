@@ -2,63 +2,94 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JavaScript Camera</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
-  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cidanania ativa</title>
+    <link rel="stylesheet" href="../css/styleBase.css">
+    <link rel="stylesheet" href="../css/styleCampoDadosBasicos.css">
+    <link rel="stylesheet" href="../css/styleCampoVerificacaoEmail.css">
+    <link rel="stylesheet" href="../css/styleCampoImagem.css">
+    <link rel="stylesheet" href="../css/reset.css">
 </head>
 
 <body>
-  <section class="section">
-    <div class="container">
-      <div class="columns">
-        <div class="column is-four-fifths">
-          <h1 class="title">
-            JavaScript Camera
-          </h1>
-          <video autoplay id="video"></video>
-          <button class="button is-hidden" id="btnPlay">
-            <span class="icon is-small">
-              <i class="fas fa-play"></i>
-            </span>
-          </button>
-          <button class="button" id="btnPause">
-            <span class="icon is-small">
-              <i class="fas fa-pause"></i>
-            </span>
-          </button>
-          <button class="button is-success" id="btnScreenshot">
-            <span class="icon is-small">
-              <i class="fas fa-camera"></i>
-            </span>
-          </button>
-          <button class="button" id="btnChangeCamera">
-            <span class="icon">
-              <i class="fas fa-sync-alt"></i>
-            </span>
-            <span>Switch camera</span>
-          </button>
+    <main>
+        <div id="imagem-fundo-container">
+            <img id="imagem-fundo-desktop" src="../../imagens/Vilhena-751x420.png" alt="Imagem de fundo">
+            <div class="decoracao-mobile">
+                <div class="decoracao">
+                    <img class="decoracao-telas-login" src="../../imagens/Rectangle 5.png" alt="">
+                    <img class="decoracao-telas-login" src="../../imagens/Rectangle 6.png" alt="">
+                </div>
+            </div>
         </div>
-        <div class="column">
-          <h2 class="title">Screenshots</h2>
-          <div id="screenshots"></div>
+        <div class="campo-conteudo">
+            <div class="estilo-fundo-formulario">
+                <form action="*" id="fomulario-cria-conta">
+                    <div id="campo-adicionar-imagem">
+                        <div id="botaoIniciar">
+                            <h2>Tire uma foto para seu perfil</h2>
+                            <button type="button" id="startButton" onclick="iniciarGravacao()">
+                                <div id="div-iconCamera">
+                                    <img src="../../imagens/iconeCamera.png" alt="Icone de Câmera">
+                                </div>
+                            </button>
+                        </div>
+
+
+                        <div id="campoVisualizacao" style="display: none;">
+                            <div class="botao-voltar">
+                                <button type="button" id="stopButton" onclick="pararGravacao()"><i
+                                        class="bi bi-arrow-left"></i>Voltar</button>
+                            </div>
+                            <video autoplay style="display: none;"></video>
+                            <canvas style="display: none;"></canvas>
+                            <div class="botoes-manipurar-foto">
+                                <div class="botao-tirar-e-deletar-foto">
+                                    <button type="button" id="buttonFoto" onclick="tirarFoto()"><i
+                                            class="bi bi-camera"></i>Tirar Foto</button>
+                                    <button type="button" id="excluirImagem" style="display: none;" onclick="deletarImagem()"><i
+                                            class="bi bi-trash"></i>Excluir</button>
+                                    <button id="trocarCamera" style="display: none;">Trocar Câmera</button>
+                                </div>
+                                <div class="botao-salvar">
+                                    <button type="button" id="finalizar" onclick="finalizarFoto()">Salvar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="etapas-descricao">
+                        <h3>Etapa <span id="numero-etapa"></span> de 4</h3>
+                        <div class="barras">
+                            <div class="barra"></div>
+                            <div class="barra"></div>
+                            <div class="barra"></div>
+                            <div class="barra"></div>
+                        </div>
+                    </div>
+                    <button class="botao-proximo">Próximo</button>
+                </form>
+            </div>
+            <div class="campo-imagem-logo">
+                <img id="logo" src="../../imagens/logoSemNome.png" alt="">
+                <div class="titulo-e-eslogam">
+                    <h2>Cidadania Ativa</h2>
+                    <h3>Sua voz, nossa cidade: juntos por um lugar melhor!</h3>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="content has-text-centered">
-      <p>
-        By <a href="https://www.webdevdrops.com/">Douglas Matoso</a> | <a
-          href="https://github.com/doug2k1/javascript-camera">Source code</a>
-      </p>
-    </div>
-  </footer>
-
-  <canvas class="is-hidden" id="canvas"></canvas>
-  <script src="script.js"></script>
+    </main>
+    <footer></footer>
+    <script>
+        document.querySelectorAll('#formulario-cria-conta input').forEach(input => {
+            input.addEventListener('keydown', function (event) {
+                if (event.key === 'Enter') {
+                    event.preventDefault();
+                }
+            });
+        });
+    </script>
+    <script src="./script.js"></script>
+    <script src="./teste.js"></script>
 </body>
-
 </html>

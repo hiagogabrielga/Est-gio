@@ -1,97 +1,88 @@
-(function () {
-    if (
-      !"mediaDevices" in navigator ||
-      !"getUserMedia" in navigator.mediaDevices
-    ) {
-      alert("Camera API is not available in your browser");
-      return;
+var video = document.querySelector('video');
+var stream;
+
+function verificarCanvas() {
+    var canvas = document.querySelector('canvas');
+    var context = canvas.getContext('2d');
+    if (context.getImageData(0, 0, canvas.width, canvas.height).data.some(channel => channel !== 0)) {
+        document.querySelector('#excluirImagem').style.display = "block";
+        return true;
+    } else {
+        document.querySelector('#excluirImagem').style.display = "none";
+        return false;
     }
-  
-    // get page elements
-    const video = document.querySelector("#video");
-    const btnPlay = document.querySelector("#btnPlay");
-    const btnPause = document.querySelector("#btnPause");
-    const btnScreenshot = document.querySelector("#btnScreenshot");
-    const btnChangeCamera = document.querySelector("#btnChangeCamera");
-    const screenshotsContainer = document.querySelector("#screenshots");
-    const canvas = document.querySelector("#canvas");
-    const devicesSelect = document.querySelector("#devicesSelect");
-  
-    // video constraints
-    const constraints = {
-      video: {
-        width: {
-          min: 1280,
-          ideal: 1920,
-          max: 2560,
-        },
-        height: {
-          min: 720,
-          ideal: 1080,
-          max: 1440,
-        },
-      },
-    };
-  
-    // use front face camera
-    let useFrontCamera = true;
-  
-    // current video stream
-    let videoStream;
-  
-    // handle events
-    // play
-    btnPlay.addEventListener("click", function () {
-      video.play();
-      btnPlay.classList.add("is-hidden");
-      btnPause.classList.remove("is-hidden");
-    });
-  
-    // pause
-    btnPause.addEventListener("click", function () {
-      video.pause();
-      btnPause.classList.add("is-hidden");
-      btnPlay.classList.remove("is-hidden");
-    });
-  
-    // take screenshot
-    btnScreenshot.addEventListener("click", function () {
-      const img = document.createElement("img");
-      canvas.width = video.videoWidth;
-      canvas.height = video.videoHeight;
-      canvas.getContext("2d").drawImage(video, 0, 0);
-      img.src = canvas.toDataURL("image/png");
-      screenshotsContainer.prepend(img);
-    });
-  
-    // switch camera
-    btnChangeCamera.addEventListener("click", function () {
-      useFrontCamera = !useFrontCamera;
-  
-      initializeCamera();
-    });
-  
-    // stop video stream
-    function stopVideoStream() {
-      if (videoStream) {
-        videoStream.getTracks().forEach((track) => {
-          track.stop();
+}
+
+function iniciarGravacao() {
+    navigator.mediaDevices.getUserMedia({ video: { width: 300, height: 300 } })
+        .then(s => {
+            stream = s;
+            video.srcObject = stream;
+            video.play();
+            video.style.borderRadius = '100%';
+            document.querySelector("#botaoIniciar").style.display = "none";
+            document.querySelector("#campoVisualizacao").style.position = "absolute";
+            document.querySelector("#campoVisualizacao").style.display = "flex";
+            document.querySelector('video').style.display = "block";
+            document.querySelector('#buttonFoto').style.display = "block";
+            document.querySelector('#stopButton').style.display = "block";
+            document.querySelector('.botao-proximo').style.display = "none";
+            document.querySelector('.etapas-descricao').style.display = "none";
+        })
+        .catch(error => {
+            console.log(error);
+            alert("Não foi possível acessar sua câmera.");
         });
-      }
+}
+
+function pararGravacao() {
+    if (stream) {
+        stream.getTracks().forEach(track => track.stop());
+        video.srcObject = null;
     }
-  
-    // initialize
-    async function initializeCamera() {
-      stopVideoStream();
-      constraints.video.facingMode = useFrontCamera ? "environment" : "user";
-  
-      try {
-        videoStream = await navigator.mediaDevices.getUserMedia(constraints);
-        video.srcObject = videoStream;
-      } catch (err) {
-        alert("Could not access the camera");
-      }
+    document.querySelector("#botaoIniciar").style.display = "flex";
+    document.querySelector("#campoVisualizacao").style.display = "none";
+    document.querySelector('video').style.display = "none";
+    document.querySelector('#buttonFoto').style.display = "none";
+    document.querySelector('#stopButton').style.display = "none";
+    document.querySelector('.botao-proximo').style.display = "block";
+    document.querySelector('.etapas-descricao').style.display = "flex";
+}
+
+function tirarFoto() {
+    var canvas = document.querySelector('canvas');
+    canvas.height = video.videoHeight;
+    canvas.width = video.videoWidth;
+    var context = canvas.getContext('2d');
+    context.drawImage(video, 0, 0);
+    document.querySelector('video').style.display = "none";
+    document.querySelector('canvas').style.display = "block";
+    document.querySelector('#stopButton').style.display = "block";
+    document.querySelector('#buttonFoto').style.display = "none";
+
+    if (stream) {
+        stream.getTracks().forEach(track => track.stop());
+        video.srcObject = null;
     }
-  
-    initializeCamera();
-  })();
+
+    verificarCanvas();
+}
+
+function deletarImagem() {
+    iniciarGravacao()
+    var canvas = document.querySelector('canvas');
+    var context = canvas.getContext('2d');
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    document.querySelector('#excluirImagem').style.display = "none";
+    document.querySelector('video').style.display = "block";
+    document.querySelector('canvas').style.display = "none";
+    document.querySelector('#buttonFoto').style.display = "block";
+}
+
+function finalizarFoto() {
+    if (verificarCanvas()) {
+        pararGravacao();
+    } else {
+        alert("Não tem imagem.");
+    }
+}
