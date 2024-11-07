@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cidanania ativa</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">    
     <link rel="stylesheet" href="../../../codigoBase/telasDeCriaLogarconta/reset.css">
     <link rel="stylesheet" href="../../../codigoBase/telasDeCriaLogarconta/styleCodigoBase.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style_telaLogincmSenha.css">
     <link rel="stylesheet" href="../../index.html">
 </head>
 
@@ -25,23 +25,21 @@
         </div>
         <div class="campo-conteudo">
             <div class="estilo-fundo-formulario">
-                <form action="*" id="fomulario-login">
+                <form action="*" id="fomulario-login-cmSenha">
                     <img id="logo-mobile" src="../../../imagens/Cidadania Ativa.png" alt="">
                     <div class="caixaPai">
-                        <h1 id="h1-login">LOGIN</h1>
-                        <div class="email">
-                            <input type="email" name="" required placeholder="E-mail"> 
-                            <i class="bi bi-envelope-fill"></i>                  
-                        </div>
-        
+                        <h1 id="h1-logincmsenha"> Bem Vindo "Usuário"</h1>
                         <div class="senha">
                             <input type="password" id="senha" required placeholder="Senha"> 
-                            <i class="bi bi-eye-fill" id="btn_senha" onclick="mostrarSenha()"></i>                   
+                            <i class="bi bi-eye-fill" id="btn_senha" onclick="mostrarSenha()"></i>              
                         </div>
                         <div>
                             <a href="#" class="eq_senha">Esqueci a senha.</a>    
                         </div>
-                        <button  class="botao" > Entrar</button>               
+                        <button class="botao">Entrar</button>     
+                        <div class="entrat_conta">
+                            <a href="#" id="entrat_conta"> Entrar em outra conta</a>    
+                        </div>          
                         <div class="nao_ct">
                             <span>Não tem conta?</span>
                             <a href="#" id="nao_ct"> Crie agora mesmo</a>    
@@ -58,7 +56,7 @@
     
             </div>
         </div>
-        <script src="script.js"></script>
+        <script src="js/script.js"></script>
     </main>
     <footer>
 

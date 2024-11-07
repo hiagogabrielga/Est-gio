@@ -38,7 +38,6 @@ h1{
     display: flex;
     flex-direction: column;
     margin: auto;
-    /* height: 65vh; */
 }  
 .caixaPai{
     display: flex;
@@ -112,17 +111,20 @@ h1{
         width: 89vw;
     }
 
-    .decoracao-mobile{
+    /* .decoracao-mobile{
         display: block;
-    }
+    } */
 
-    #fomulario-eqSenha{
-        /* display: block; */
+    /* #fomulario-eqSenha{
+        display: block; 
         margin: 0 auto;
         height: 85vh;
-    }
-    .botao{
+    } */
+    /* .botao{
         margin: 0 auto;
+    } */
+    .caixaPai{
+        width: 50%;
     }
     #logo-mobile{
         display: block;
