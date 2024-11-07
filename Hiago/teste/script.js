@@ -23,7 +23,7 @@ function listarDispositivos() {
         .then(devices => {
             const videoDevices = devices.filter(device => device.kind === 'videoinput');
             if (videoDevices.length == 0 || videoDevices.length == 1) {
-                document.querySelector("#botaotrocarCamera").style.display ="none"
+                document.querySelector("#botaotrocarCamera").style.display ="block"
             } else {
                 document.querySelector("#botaotrocarCamera").style.display ="block"
                 
@@ -50,7 +50,7 @@ function trocarCamera() {
 }
 
 function iniciarGravacao() {
-    navigator.mediaDevices.getUserMedia({ video: {facingMode: trocarCamera(facingMode), width: 300, height: 300 } })
+    navigator.mediaDevices.getUserMedia({ video: {facingMode: trocarCamera(), width: 300, height: 300 } })
         .then(s => {
             stream = s;
             video.srcObject = stream;
