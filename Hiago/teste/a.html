@@ -41,6 +41,7 @@
                             <div class="botao-voltar">
                                 <button type="button" id="stopButton" onclick="pararGravacao()"><i
                                         class="bi bi-arrow-left"></i>Voltar</button>
+                                <button type="button" id="trocarCamera" onclick="trocarCamera()">Trocar câmera</button>
                             </div>
                             <video autoplay style="display: none;"></video>
                             <canvas style="display: none;"></canvas>
@@ -48,8 +49,8 @@
                                 <div class="botao-tirar-e-deletar-foto">
                                     <button type="button" id="buttonFoto" onclick="tirarFoto()"><i
                                             class="bi bi-camera"></i>Tirar Foto</button>
-                                    <button type="button" id="excluirImagem" style="display: none;" onclick="deletarImagem()"><i
-                                            class="bi bi-trash"></i>Excluir</button>
+                                    <button type="button" id="excluirImagem" style="display: none;"
+                                        onclick="deletarImagem()"><i class="bi bi-trash"></i>Excluir</button>
                                     <button id="trocarCamera" style="display: none;">Trocar Câmera</button>
                                 </div>
                                 <div class="botao-salvar">
@@ -90,6 +91,6 @@
         });
     </script>
     <script src="./script.js"></script>
-    <script src="./teste.js"></script>
 </body>
+
 </html>

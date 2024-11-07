@@ -1,5 +1,6 @@
 var video = document.querySelector('video');
 var stream;
+var facingMode = 'environment'
 
 function verificarCanvas() {
     var canvas = document.querySelector('canvas');
@@ -13,8 +14,30 @@ function verificarCanvas() {
     }
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    listarDispositivos();
+});
+
+function listarDispositivos() {
+    navigator.mediaDevices.enumerateDevices()
+        .then(devices => {
+            const videoDevices = devices.filter(device => device.kind === 'videoinput');
+            if (videoDevices.length > 0) {
+                document.querySelector("#trocarCamera").style.display ="block"
+            } if (videoDevices.length == 1) {
+                document.querySelector("#trocarCamera").style.display ="none"
+            } else {
+                document.querySelector("#trocarCamera").style.display ="none"
+                alert('Nenhuma câmera encontrada.');
+            }
+        })
+        .catch(error => {
+            console.log(error);
+        });
+}
+
 function iniciarGravacao() {
-    navigator.mediaDevices.getUserMedia({ video: { width: 300, height: 300 } })
+    navigator.mediaDevices.getUserMedia({ video: {facingMode: facingMode, width: 300, height: 300 } })
         .then(s => {
             stream = s;
             video.srcObject = stream;
