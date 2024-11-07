@@ -23,10 +23,10 @@ function listarDispositivos() {
         .then(devices => {
             const videoDevices = devices.filter(device => device.kind === 'videoinput');
             if (videoDevices.length == 0 || videoDevices.length == 1) {
-                document.querySelector("#botaotrocarCamera").style.display ="block"
+                document.querySelector("#botaotrocarCamera").style.display = "none"
             } else {
-                document.querySelector("#botaotrocarCamera").style.display ="block"
-                
+                document.querySelector("#botaotrocarCamera").style.display = "block"
+
             }
         })
         .catch(error => {
@@ -35,22 +35,27 @@ function listarDispositivos() {
 }
 
 function trocarCamera() {
-    let facingMode = document.getElementById('botaotrocarCamera').getAttribute('data-facing-mode') || 'user';
-    
     if (facingMode === 'environment') {
         facingMode = 'user';
-    } else {
+    } else if (facingMode === 'user'){
         facingMode = 'environment';
+    } else {
+        facingMode = 'user';
     }
-    
+
     console.log("valor trocado para", facingMode);
     document.getElementById('botaotrocarCamera').setAttribute('data-facing-mode', facingMode);
-    
+
     return facingMode;
 }
 
 function iniciarGravacao() {
-    navigator.mediaDevices.getUserMedia({ video: {facingMode: trocarCamera(), width: 300, height: 300 } })
+    navigator.mediaDevices.getUserMedia({
+        video: {
+            facingMode: trocarCamera(),
+            width: 300, height: 300
+        }
+    })
         .then(s => {
             stream = s;
             video.srcObject = stream;
