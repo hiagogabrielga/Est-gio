@@ -1,6 +1,6 @@
 var video = document.querySelector('video');
 var stream;
-var facingMode;
+var facingMode = 'user';
 
 function verificarCanvas() {
     var canvas = document.querySelector('canvas');
@@ -23,7 +23,7 @@ function listarDispositivos() {
         .then(devices => {
             const videoDevices = devices.filter(device => device.kind === 'videoinput');
             if (videoDevices.length == 0 || videoDevices.length == 1) {
-                document.querySelector("#botaotrocarCamera").style.display = "none"
+                document.querySelector("#botaotrocarCamera").style.display = "block"
             } else {
                 document.querySelector("#botaotrocarCamera").style.display = "block"
 

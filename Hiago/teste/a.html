@@ -39,10 +39,9 @@
 
                         <div id="campoVisualizacao" style="display: none;">
                             <div class="botao-voltar">
-                                <button type="button" id="stopButton" onclick="pararGravacao()"><i
-                                        class="bi bi-arrow-left"></i>Voltar</button>
-                                <button type="button" id="botaotrocarCamera" onclick="trocarCamera()">Trocar
-                                    câmera</button>
+                                <button type="button" id="stopButton" onclick="pararGravacao()"><i class="bi bi-arrow-left"></i>Voltar</button>
+
+                                <button type="button" onclick="trocarCamera()" id="botaotrocarCamera">Trocar câmera</button>
                             </div>
                             <video autoplay style="display: none;"></video>
                             <canvas style="display: none;"></canvas>
@@ -52,7 +51,6 @@
                                             class="bi bi-camera"></i>Tirar Foto</button>
                                     <button type="button" id="excluirImagem" style="display: none;"
                                         onclick="deletarImagem()"><i class="bi bi-trash"></i>Excluir</button>
-                                    <button id="trocarCamera" style="display: none;">Trocar Câmera</button>
                                 </div>
                                 <div class="botao-salvar">
                                     <button type="button" id="finalizar" onclick="finalizarFoto()">Salvar</button>
