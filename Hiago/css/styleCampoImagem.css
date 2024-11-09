@@ -55,6 +55,7 @@
     top: 0;
     padding: 2%;
     margin: 0px auto 12px;
+    position: relative;
 }
 
 canvas {

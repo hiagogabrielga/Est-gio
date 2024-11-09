@@ -35,6 +35,26 @@ function listarDispositivos() {
 }
 
 function trocarCamera() {
+    var canvas = document.querySelector('canvas');
+    canvas.height = video.videoHeight;
+    canvas.width = video.videoWidth;
+    var context = canvas.getContext('2d');
+    document.querySelector('canvas').style.display = "block";
+    context.drawImage(video, 0, 0);
+    if (stream) {
+        stream.getTracks().forEach(track => track.stop());
+        video.srcObject = null;
+    }
+
+    iniciarGravacao()
+    document.querySelector('video').style.display = "none";
+    document.querySelector('canvas').style.position = "relative";
+    const posicaoOrigem = document.querySelector('video').getBoundingClientRect();
+    document.querySelector('canvas').style.top = `${posicaoOrigem.top}px`;
+    document.querySelector('canvas').style.left = `${posicaoOrigem.left}px`;
+}
+
+function iniciarGravacao() {
     if (facingMode === 'environment') {
         facingMode = 'user';
     } else if (facingMode === 'user'){
@@ -42,17 +62,9 @@ function trocarCamera() {
     } else {
         facingMode = 'user';
     }
-
-    console.log("valor trocado para", facingMode);
-    document.getElementById('botaotrocarCamera').setAttribute('data-facing-mode', facingMode);
-
-    return facingMode;
-}
-
-function iniciarGravacao() {
     navigator.mediaDevices.getUserMedia({
         video: {
-            facingMode: trocarCamera(),
+            facingMode: facingMode,
             width: 300, height: 300
         }
     })
