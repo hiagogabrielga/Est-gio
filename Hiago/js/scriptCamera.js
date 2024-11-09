@@ -106,6 +106,7 @@ function tirarOutraFoto() {
     document.querySelector('#buttonFoto').style.display = "block";
     document.querySelector('#campo-mostrar-imagem').style.display = "none";
     context.clearRect(0, 0, canvas.width, canvas.height);
+    var facingMode;
     if (facingMode === 'environment') {
         facingMode = 'user';
     } else if (facingMode === 'user'){
