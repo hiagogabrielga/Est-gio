@@ -30,9 +30,17 @@
                         <div id="botaoIniciar">
                             <h2>Tire uma foto para seu perfil</h2>
                             <button type="button" id="startButton" onclick="iniciarGravacao()">
-                                <div id="div-iconCamera">
+                                <div id="div-iconCamera" class="antes-de-tirar-foto" >
                                     <img src="../../imagens/iconeCamera.png" alt="Icone de Câmera">
                                 </div>
+                            </button>
+                        </div>
+                        <div id="tela-depois-de-tirar-foto" style="display: none;">
+                            <h2>Tire uma foto para seu perfil</h2>
+                            <canvas id="inicio">
+                            </canvas>
+                            <button type="button" id="startButtonDespois" onclick="confirmarTirarFoto()">
+                                Tirar outra foto
                             </button>
                         </div>
 
@@ -44,7 +52,7 @@
                                 <button type="button" onclick="trocarCamera()" id="botaotrocarCamera">Trocar câmera</button>
                             </div>
                             <video autoplay style="display: none;"></video>
-                            <canvas style="display: none;"></canvas>
+                            <canvas style="display: none;" id="campo-mostrar-imagem"></canvas>
                             <div class="botoes-manipurar-foto">
                                 <div class="botao-tirar-e-deletar-foto">
                                     <button type="button" id="buttonFoto" onclick="tirarFoto()"><i

@@ -38,10 +38,34 @@
     justify-content: space-around;
 }
 
-#botaoIniciar>h2 {
+#inicio{
+    width: 150px;
+    height: 150px;
+}
+
+#tela-depois-de-tirar-foto{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#botaoIniciar>h2,  #tela-depois-de-tirar-foto>h2{
     margin: 0px 0px 12px;
     font-size: 20px;
     color: white;
+}
+
+#startButtonDespois{
+    box-sizing: border-box;
+    margin: 12px 0px 25px;
+    background-color: var(--verde);
+    color: white;
+    box-shadow: 0px 0px 10px var(--verde);
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
 }
 
 #campoVisualizacao {
