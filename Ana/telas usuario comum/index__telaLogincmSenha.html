@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cidanania ativa</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">    
+    <link rel="stylesheet" href="../../../codigoBase/telasDeCriaLogarconta/reset.css">
+    <link rel="stylesheet" href="../../../codigoBase/telasDeCriaLogarconta/styleCodigoBase.css">
+    <link rel="stylesheet" href="../css/style_telaLogincmSenha.css">
+    <link rel="stylesheet" href="../../index.html">
+</head>
+
+<body>
+    <main>
+        <div id="imagem-fundo-container">
+            <img id="imagem-fundo-desktop" src="../../../imagens/Vilhena-751x420.png" alt="Imagem de fundo">
+            <div class="decoracao-mobile">
+                <div class="decoracao">
+                    <img class="decoracao-telas-login" src="../../../imagens/Rectangle 5.png" alt="">
+                    <img class="decoracao-telas-login" src="../../../imagens/Rectangle 6.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="campo-conteudo">
+            <div class="estilo-fundo-formulario">
+                <form action="*" id="fomulario-login-cmSenha">
+                    <img id="logo-mobile" src="../../../imagens/Cidadania Ativa.png" alt="">
+                    <div class="caixaPai">
+                        <h1 id="h1-logincmsenha"> Bem Vindo "Usuário"</h1>
+                        <div class="senha">
+                            <input type="password" id="senha" required placeholder="Senha"> 
+                            <i class="bi bi-eye-fill" id="btn_senha" onclick="mostrarSenha('senha', 'btn_senha')"></i>              
+                        </div>
+                        <div>
+                            <a href="#" class="eq_senha">Esqueci a senha.</a>    
+                        </div>
+                        <button class="botao">Entrar</button>     
+                        <div class="entrat_conta">
+                            <a href="#" id="entrat_conta"> Entrar em outra conta</a>    
+                        </div>          
+                        <div class="nao_ct">
+                            <span>Não tem conta?</span>
+                            <a href="#" id="nao_ct"> Crie agora mesmo</a>    
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="campo-imagem-logo">
+                <img id="logo" src="../../../imagens/logoSemNome.png" alt="">
+                <div class="titulo-e-eslogam">
+                    <h2>Cidadania Ativa</h2>
+                    <h3>Sua voz, nossa cidade: juntos por um lugar melhor!</h3>
+                </div>
+    
+            </div>
+        </div>
+        <script src="js/script.js"></script>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+</html>

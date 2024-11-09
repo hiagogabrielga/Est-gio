@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --verde: #2BD83C;
+    --verde-musgo-claro: #285943;
+    --verde-musgo-escuro: #002400;
+    --verde-claro: #86E990;
+    --verde-limao: #A1FF7E;
+    --cor-escura: #0C0C0C;
+    --cor-clara: #F0F2EF;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+#texto_explicativo{
+    color: var(--cor-clara);
+    text-align: center;
+    margin-bottom: 10px;
+    padding: 1rem;
+
+
+}
+.caixaPai{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--verde-limao);
+    text-align: center;
+    margin: auto;
+    /* height: 60vh; */
+    width: 50vw;
+    /* position: relative; */
+
+}
+.caixaFilho{
+    background-color: white;
+    padding: 2rem;
+    text-align: left;
+    margin: 10px 0;
+    width: 25vw;
+    
+    
+}
