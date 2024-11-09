@@ -46,6 +46,7 @@ function trocarCamera() {
         video.srcObject = null;
     }
     document.querySelector('video').style.display = "none";
+    facingMode;
     iniciarGravacao()
     video.addEventListener('loadeddata', () => {
         document.querySelector('canvas').style.display = "none";
