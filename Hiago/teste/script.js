@@ -45,13 +45,12 @@ function trocarCamera() {
         stream.getTracks().forEach(track => track.stop());
         video.srcObject = null;
     }
-
-    iniciarGravacao()
     document.querySelector('video').style.display = "none";
-    document.querySelector('canvas').style.position = "relative";
-    const posicaoOrigem = document.querySelector('video').getBoundingClientRect();
-    document.querySelector('canvas').style.top = `${posicaoOrigem.top}px`;
-    document.querySelector('canvas').style.left = `${posicaoOrigem.left}px`;
+    iniciarGravacao()
+    video.addEventListener('loadeddata', () => {
+        document.querySelector('canvas').style.display = "none";
+        document.querySelector('video').style.display = "block";
+    });
 }
 
 function iniciarGravacao() {
@@ -76,7 +75,9 @@ function iniciarGravacao() {
             document.querySelector("#botaoIniciar").style.display = "none";
             document.querySelector("#campoVisualizacao").style.position = "absolute";
             document.querySelector("#campoVisualizacao").style.display = "flex";
-            document.querySelector('video').style.display = "block";
+            video.addEventListener('loadeddata', () => {
+                document.querySelector('video').style.display = "block";
+            });
             document.querySelector('#buttonFoto').style.display = "block";
             document.querySelector('#stopButton').style.display = "block";
             document.querySelector('.botao-proximo').style.display = "none";
@@ -123,12 +124,16 @@ function tirarFoto() {
 
 function deletarImagem() {
     iniciarGravacao()
+    document.querySelector('video').style.display = "none";
+    iniciarGravacao()
+    video.addEventListener('loadeddata', () => {
+        document.querySelector('canvas').style.display = "none";
+        document.querySelector('video').style.display = "block";
+    });
     var canvas = document.querySelector('canvas');
     var context = canvas.getContext('2d');
     context.clearRect(0, 0, canvas.width, canvas.height);
     document.querySelector('#excluirImagem').style.display = "none";
-    document.querySelector('video').style.display = "block";
-    document.querySelector('canvas').style.display = "none";
     document.querySelector('#buttonFoto').style.display = "block";
 }
 
