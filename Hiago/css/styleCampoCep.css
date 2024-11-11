@@ -1,0 +1,56 @@
+@import url(styleBase.css);
+
+
+.campo-verificacao-cep{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 100%;
+    align-items: center;
+}
+
+#campo-cep{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto 10px;
+    width: 100%;
+}
+
+#campo-dados-cep{
+    width: 100%;
+}
+
+#message{
+    margin: auto;
+    width: 76%;
+    height: 20px; 
+    color: rgb(255, 255, 255);
+    font-size: medium;
+}
+
+#campo-dados-cep input, #input-cep{
+    box-sizing: border-box;
+    height: 35px;
+    border-radius: 20px;
+    border: none;
+    margin: auto;
+    padding-left: 10px;
+    width: 90%;
+    min-width: 175px;
+    font-size: medium;
+}
+
+
+#campo-dados-cep{
+    flex-direction: column;
+    display: flex;
+    height: 250px;
+    margin: auto;
+    justify-content: space-around;
+}
+
+@media screen and (max-width: 700px) {
+    #campo-dados-cep input, #input-cep{
+        height: 35px;
+    }
+}

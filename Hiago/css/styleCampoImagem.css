@@ -21,7 +21,7 @@
     text-align: left;
 }
 
-#campo-adicionar-imagem {
+.campo-adicionar-imagem {
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -157,10 +157,6 @@ canvas {
 @media screen and (max-width: 700px) {
     #campoVisualizacao {
         width: 100vw;
-    }
-
-
-    #campoVisualizacao {
         border-radius: none;
     }
 

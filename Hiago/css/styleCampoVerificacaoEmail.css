@@ -1,6 +1,6 @@
 @import url(styleBase.css);
 
-.campo-verificacao{
+.campo-verificacao-email{
     background-color: var(--verde-limao);
     display: flex;
     justify-content: space-between;

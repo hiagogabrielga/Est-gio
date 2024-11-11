@@ -55,6 +55,7 @@ function trocarCamera() {
 }
 
 function iniciarGravacao() {
+    var facingMode;
     if (facingMode === 'environment') {
         facingMode = 'user';
     } else if (facingMode === 'user'){
@@ -82,6 +83,7 @@ function iniciarGravacao() {
             });
             document.querySelector('#buttonFoto').style.display = "block";
             document.querySelector('#stopButton').style.display = "block";
+            document.querySelector('#logo-mobile').style.display = "none";
             document.querySelector('.botao-proximo').style.display = "none";
             document.querySelector('.etapas-descricao').style.display = "none";
         })
@@ -148,33 +150,29 @@ function pararGravacao() {
     var contextMostrarImagem = canvasMostrarImagem.getContext('2d');
     var contextInicio = canvasInicio.getContext('2d');
 
-    // Verifica se o canvas 'campo-mostrar-imagem' contém uma imagem
     if (verificarCanvas()) {
-        // Ajusta o tamanho do canvas 'inicio' para corresponder ao 'campo-mostrar-imagem'
         canvasInicio.width = canvasMostrarImagem.width;
         canvasInicio.height = canvasMostrarImagem.height;
-
-        // Copia a imagem de 'campo-mostrar-imagem' para 'inicio'
         contextInicio.drawImage(canvasMostrarImagem, 0, 0);
 
-        // Exibe 'tela-depois-de-tirar-foto' e oculta 'botaoIniciar'
         document.querySelector("#tela-depois-de-tirar-foto").style.display = "flex";
         document.querySelector("#botaoIniciar").style.display = "none";
     } else{
         document.querySelector("#botaoIniciar").style.display = "flex";
     }
 
-    // Encerra a gravação de vídeo
     if (stream) {
         stream.getTracks().forEach(track => track.stop());
         video.srcObject = null;
     }
 
-    // Exibe 'botaoIniciar' e oculta 'campoVisualizacao' e elementos de controle da câmera
     document.querySelector("#campoVisualizacao").style.display = "none";
     document.querySelector('video').style.display = "none";
     document.querySelector('#buttonFoto').style.display = "none";
     document.querySelector('#stopButton').style.display = "none";
+    if (document.documentElement.scrollWidth <= 700) {
+        document.querySelector('#logo-mobile').style.display = "flex";
+    }
     document.querySelector('.botao-proximo').style.display = "block";
     document.querySelector('.etapas-descricao').style.display = "flex";
 }

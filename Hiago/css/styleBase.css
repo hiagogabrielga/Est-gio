@@ -61,14 +61,14 @@ main{
     position: relative;
 }
 
-#fomulario-cria-conta{
+#formulario-cria-conta{
     display: flex;
     flex-direction: column;
     margin: auto;
-    height: 65vh;
+    height: 75vh;
 }
 
-#fomulario-cria-conta>input::placeholder{
+#formulario-cria-conta>input::placeholder{
     font-size: large;
 }
 
@@ -166,9 +166,9 @@ main{
         display: block;
     }
 
-    #fomulario-cria-conta{
+    #formulario-cria-conta{
         margin: 0 auto;
-        height: 85vh;
+        height: 95vh;
         width: 90vw;
     }
 
