@@ -112,13 +112,34 @@
     margin:0 auto;
     box-shadow:  0px 0px 10px var(--verde);
 }
-/*Arrumar*/
-/* @media screen and (max-width: 700px){
+
+@media screen and (max-width: 700px){
     .campo-imagem-logo{
         display: none;
+        margin: 0 auto;
+        height: 85vh;
     }
     .container{
-        width: 50%;
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        margin-top: -10px;
+    }
+    .container_pai{
+        padding: .9rem;
+        display: block;
+        margin: 0 auto;
+    }
+    .container_filho{
+        padding: .6rem;
+    }
+    .container_filho p{
+        padding-bottom: .2rem;
+    }
+    #texto_explicativo{
+        margin: auto;
+    
     }
     .estilo-fundo-formulario{
         background-color: transparent;
@@ -128,4 +149,4 @@
     .barras{
         width: 80vw;
     }
-} */
+}
