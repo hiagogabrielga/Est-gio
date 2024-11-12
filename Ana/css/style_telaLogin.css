@@ -25,6 +25,10 @@ body{
 
     
 }
+small{
+    color: var(--cor-clara);
+    margin-bottom: .8rem;
+}
 
 /***********login*****************/
 #fomulario-login{
@@ -100,6 +104,7 @@ body{
     color: var(--cor-clara);
     
 }
+
 @media screen and (max-width: 700px){
     .campo-imagem-logo{
         display: none;
