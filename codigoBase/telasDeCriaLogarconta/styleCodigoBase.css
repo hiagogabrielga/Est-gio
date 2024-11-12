@@ -16,6 +16,7 @@ body {
     background-position: center; */
     background-color: #444444;
     display: flex;
+    height: auto;
 }
 
 main{
@@ -23,16 +24,18 @@ main{
 }
 
 #imagem-fundo-container {
-    width: 100%;
-    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
     background-image: url('../../imagens/Vilhena-751x420.png');
     background-size: cover;
-    background-repeat: no-repeat;
     background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    z-index: -1; /* Coloca a imagem ao fundo */
 }
+
 
 #imagem-fundo-desktop {
     display: none; /* Esconde a imagem original */

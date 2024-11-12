@@ -13,7 +13,6 @@
 <body>
     <main>
         <div id="imagem-fundo-container">
-            <img id="imagem-fundo-desktop" src="../../../imagens/Vilhena-751x420.png" alt="Imagem de fundo">
             <div class="decoracao-mobile">
                 <div class="decoracao">
                     <img class="decoracao-telas-login" src="../../imagens/Rectangle 5.png" alt="">
@@ -23,21 +22,27 @@
         </div>
         <div class="campo-conteudo">
             <div class="estilo-fundo-formulario">
-                <form action="*" id="fomulario">
+                <form action="*" id="fomulario-adicionar-situacao">
                     <img id="logo-mobile" src="../../imagens/Cidadania Ativa.png" alt="">
-                    
-                </form>
-                <div class="container">  
-                    <h2 id="texto_explicativo"> Para continuar, catalogue a situação que está conta será responsável em resolver. <br>Lista de situações já catalogadas</h2> 
-                    <div class="container_pai">
-                        <div class="container_filho">
-                            <p> Vazamento de água <br> <strong>Responsável:</strong>SAAE
-                            </p>
-                            <p>Sinalização no transito<br> <strong>Responsável:</strong>SETRAM
-                            </p>
+                    <div class="container-cadastrar-problema-responsavel">
+                        <h2 id="texto_explicativo"> Para continuar, catalogue a situação que está conta será responsável em resolver.</h2>
+                        <div class="container-pai">
+                            <h3 id="label-container-filho">Lista de situações já catalogadas</h3>
+                            <div class="container-filho">
+                                <div class="problemas-catalogados">
+                                    <h4 class="problema">Vazamento de água</h4>
+                                    <p class="responsavel"><strong>Responsável:</strong>SAAE</p>
+                                </div>
+                                <div class="problemas-catalogados">
+                                    <h4 class="problema">Sinalização no transito</h4>
+                                    <p class="responsavel"><strong>Responsável:</strong>SETRAM</p>
+                                </div>
+
+                            </div>
+                            <button id="botao-adicionar-situacao"> Adicionar situação</button>
                         </div>
                     </div>
-                    <button id="botao"> Adicionar situação</button>
+
                     <div class="etapas-descricao">
                         <h3>Etapa <span id="numero-etapa"></span> de 4</h3>
                         <div class="barras">
@@ -48,9 +53,9 @@
                         </div>
                     </div>
                     <button type="button" class="botao_proximo">Enviar</button>
-                    
-                </div>
-                
+                </form>
+
+
             </div>
             <div class="campo-imagem-logo">
                 <img id="logo" src="../../imagens/logoSemNome.png" alt="">
@@ -58,7 +63,7 @@
                     <h2>Cidadania Ativa</h2>
                     <h3>Sua voz, nossa cidade: juntos por um lugar melhor!</h3>
                 </div>
-    
+
             </div>
         </div>
     </main>
