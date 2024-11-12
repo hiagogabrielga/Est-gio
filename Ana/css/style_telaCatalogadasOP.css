@@ -15,32 +15,117 @@
 }
 
 
-#texto_explicativo{
-    color: var(--cor-clara);
-    text-align: center;
-    margin-bottom: 10px;
-    padding: 1rem;
 
-
-}
-.caixaPai{
+.container{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    background-color: var(--verde-limao);
-    text-align: center;
-    margin: auto;
-    /* height: 60vh; */
-    width: 50vw;
-    /* position: relative; */
-
+    align-items: center;
+    padding: 20px;
+    justify-content: space-around;
 }
-.caixaFilho{
+
+#texto_explicativo{
+    text-align: justify;
+    font-size: 1.5rem;
+    color: var(--cor-clara);
+    margin: 1.5rem;
+}
+
+.container_pai{
+    background-color: var(--verde-limao);
+    padding: 1.5rem;
+    margin: 1rem;
+    border-radius: 10px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.container_filho{
     background-color: white;
     padding: 2rem;
+    border-radius: 8px;
+    width: 80%;
     text-align: left;
-    margin: 10px 0;
-    width: 25vw;
-    
-    
+    margin-bottom: 1rem;
 }
+
+.container_filho strong{
+    font-weight: bold;
+    font-size: .9rem;
+}
+
+.container_filho p{
+    line-height: 1.2rem;
+    padding-bottom: .6rem;
+    margin: .9rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.598);
+}
+
+#botao{
+    background-color: var(--verde);
+    padding: .3rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: .9rem;
+    cursor: pointer;
+    color: var(--cor-clara);
+    margin: .5rem;
+    box-shadow:  0px 0px 10px var(--verde);
+    align-self: center;
+}
+
+.etapas-descricao {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 20vh;
+    margin: auto;
+    font-size: 20px;
+}
+
+.barras{
+    display: flex;
+    justify-content: space-around;
+    width: 40vw;
+    margin: auto;
+}
+
+.barra{
+    background-color: #ffffff7a;
+    width: 24%;
+    border-radius: 20px;
+    height: 10px;
+}
+
+.botao_proximo{
+    width: 10rem;
+    background-color: var(--verde);
+    padding: .5rem;
+    font-size: 1.6rem;
+    border: none;
+    border-radius: 1.5rem;
+    color: var(--cor-clara);
+    margin:0 auto;
+    box-shadow:  0px 0px 10px var(--verde);
+}
+/*Arrumar*/
+/* @media screen and (max-width: 700px){
+    .campo-imagem-logo{
+        display: none;
+    }
+    .container{
+        width: 50%;
+    }
+    .estilo-fundo-formulario{
+        background-color: transparent;
+        width: 89vw;
+    }
+
+    .barras{
+        width: 80vw;
+    }
+} */
