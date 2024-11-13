@@ -25,7 +25,8 @@
                 <form action="*" id="fomulario-adicionar-situacao">
                     <img id="logo-mobile" src="../../imagens/Cidadania Ativa.png" alt="">
                     <div class="container-cadastrar-problema-responsavel">
-                        <h2 id="texto_explicativo"> Para continuar, catalogue a situação que está conta será responsável em resolver.</h2>
+                        <h2 id="texto_explicativo"> Para continuar, catalogue a situação que está conta será responsável
+                            em resolver.</h2>
                         <div class="container-pai">
                             <h3 id="label-container-filho">Lista de situações já catalogadas</h3>
                             <div class="container-filho">
@@ -39,7 +40,7 @@
                                 </div>
 
                             </div>
-                            <button id="botao-adicionar-situacao"> Adicionar situação</button>
+                            <button  type="button" id="botao-adicionar-situacao"> Adicionar situação</button>
                         </div>
                     </div>
 
@@ -52,7 +53,7 @@
                             <div class="barra"></div>
                         </div>
                     </div>
-                    <button type="button" class="botao_proximo">Enviar</button>
+                    <button class="botao_proximo">Enviar</button>
                 </form>
 
 
@@ -70,6 +71,15 @@
     <footer>
 
     </footer>
+    <script>
+        document.querySelectorAll('#fomulario-adicionar-situacao').forEach(input => {
+            input.addEventListener('keydown', function (event) {
+                if (event.key === 'Enter') {
+                    event.preventDefault();
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
