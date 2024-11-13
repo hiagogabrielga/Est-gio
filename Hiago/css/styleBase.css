@@ -90,15 +90,19 @@ main{
     flex-direction: column;
     align-items: center;
     height: 20px auto ;
-    margin: auto;
+    margin: auto auto 15px;
     font-size: 20px;
+}
+
+.etapas-descricao > h3{
+    margin: auto auto 5px;
 }
 
 .barras{
     display: flex;
     justify-content: space-around;
     width: 40vw;
-    margin: auto;
+    margin: 10px auto 5px;
 }
 
 .barra{
@@ -106,6 +110,20 @@ main{
     width: 24%;
     border-radius: 20px;
     height: 10px;
+}
+
+.botao-voltar{
+    position: absolute;
+    width: 150px;
+    height: 30px;
+    align-items: center;
+    border-radius: 20px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 0;
+    left: 20px;
 }
 
 .titulo-e-eslogam{
@@ -150,7 +168,7 @@ main{
     width: 150px;
     position: relative;
     display: none;
-    margin: 40px auto;
+    margin: 70px auto 10px;
 }
 
 @media screen and (max-width: 700px){

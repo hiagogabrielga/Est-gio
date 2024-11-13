@@ -84,6 +84,7 @@ function iniciarGravacao() {
             document.querySelector('#buttonFoto').style.display = "block";
             document.querySelector('#stopButton').style.display = "block";
             document.querySelector('#logo-mobile').style.display = "none";
+            document.querySelector('.botao-voltar').style.display = "none";
             document.querySelector('.botao-proximo').style.display = "none";
             document.querySelector('.etapas-descricao').style.display = "none";
         })

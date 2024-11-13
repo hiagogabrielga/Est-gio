@@ -9,7 +9,7 @@
     border-radius: 10px;
     margin: 0 auto 20px;
     padding: 5%;
-    height: 100%;
+    height: 40vh;
 }
 
 .input-codigo{
@@ -43,6 +43,7 @@
     border: none;
     text-align: left;
     padding-left: 12px;
+    color: white;
 }
 
 #botao-verificar{
@@ -67,18 +68,24 @@
         width: 70%;
     }
 
-    .campo-verificacao{
+    .campo-verificacao-email{
         width: 80%;
+        height: 40vh;
     }
 }
 
 @media screen and (max-width: 430px){
     .botoes-de-solucao{
-        width: 90%;
+        width: 100%;
     }  
 
     .input-codigo{
         width: 35px;
         height: 41px;
+    }
+
+    .botoes-de-solucao{
+        text-align: center;
+        padding-left: 0;
     }
 }

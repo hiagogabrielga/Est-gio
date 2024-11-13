@@ -27,11 +27,12 @@
         <div class="campo-conteudo">
             <div class="estilo-fundo-formulario">
                 <form action="*" id="formulario-cria-conta">
+                    <button type="button" class="botao-voltar" onclick="voltarEtapa()" style="display: none;">Voltar</button> 
                     <img id="logo-mobile" src="../imagens/Cidadania Ativa.png" alt="Logo Cidadania Ativa">
                     <div class="campo-input-dados-basicos" style="display: none;">
                         <input class="input-dados-basicos" type="text" placeholder="Nome" id="input-nome">
 
-                        <input class="input-dados-basicos" type="email" id="input-email" placeholder="Email">
+                        <input class="input-dados-basicos" type="email" id="input-email" placeholder="Email" oninput="transferirEmail(event)">
 
                         <input class="input-dados-basicos" type="password" id="input-senha" placeholder="Senha">
 
@@ -41,7 +42,7 @@
 
                     <div class="campo-verificacao-email">
                         <div id="texto-campo-verificacao">
-                            <h3>Foi enviado um código para o Email <span id="span-endereco-email">adoadoado</span>,
+                            <h3>Foi enviado um código para o Email <span id="span-endereco-email">email</span>,
                                 adicione este
                                 códigoa a baixo</h3>
                         </div>
@@ -53,12 +54,12 @@
                             <input class="input-codigo" type="number" disabled>
                         </div>
                         <div id="campo-botoes-de-solucao">
-                            <button class="botoes-de-solucao" id="botao-nao-acesso-email">Não tenho acesso a esse
+                            <button type="button" class="botoes-de-solucao" id="botao-nao-acesso-email">Não tenho acesso a esse
                                 email</button>
-                            <button class="botoes-de-solucao" id="botao-enviar-novamente">Enviar o código
+                            <button type="button" class="botoes-de-solucao" id="botao-enviar-novamente">Enviar o código
                                 novamente</button>
                         </div>
-                        <button id="botao-verificar">verificar</button>
+                        <button type="button" id="botao-verificar">verificar</button>
                     </div>
                     <div class="campo-verificacao-cep">
                         <div id="campo-cep">
@@ -66,10 +67,10 @@
                             <input id="input-cep" placeholder="Cep">
                         </div>
                         <div id="campo-dados-cep">
-                            <input id="input-estado" type="text" placeholder="Estado">
-                            <input id="input-cidade" type="text" placeholder="Cidade">
-                            <input id="input-bairro" type="text" placeholder="Bairro">
-                            <input id="input-rua" type="text" placeholder="Rua">
+                            <input id="input-estado" type="text" placeholder="Estado" disabled>
+                            <input id="input-cidade" type="text" placeholder="Cidade" disabled>
+                            <input id="input-bairro" type="text" placeholder="Bairro" disabled>
+                            <input id="input-rua" type="text" placeholder="Rua" disabled>
                         </div>
                     </div>
                     <div class="campo-adicionar-imagem">
@@ -81,7 +82,7 @@
                                 </div>
                             </button>
                         </div>
-                        
+
                         <div id="tela-depois-de-tirar-foto" style="display: none;">
                             <h2>Tire uma foto para seu perfil</h2>
                             <canvas id="inicio">
@@ -113,7 +114,7 @@
                     </div>
 
                     <div class="etapas-descricao">
-                        <h3>Etapa <span id="numero-etapa"></span> de 4</h3>
+                        <h3>Etapa <span id="numero-etapa">1</span> de 4</h3>
                         <div class="barras">
                             <div class="barra"></div>
                             <div class="barra"></div>
@@ -137,9 +138,19 @@
     <footer>
 
     </footer>
+    <script>
+        document.querySelectorAll('#formulario-cria-conta').forEach(input => {
+            input.addEventListener('keydown', function (event) {
+                if (event.key === 'Enter') {
+                    event.preventDefault();
+                }
+            });
+        });
+    </script>
     <script src="./js/scriptCamera.js"></script>
     <script src="./js/scriptCep.js"></script>
     <script src="./js/scriptNavegarPorFomulário.js"></script>
+    <script src="./js/scriptVerificarEmail.js"></script>
 </body>
 
 </html>

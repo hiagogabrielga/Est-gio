@@ -4,7 +4,7 @@
 .campo-verificacao-cep{
     display: flex;
     flex-direction: column;
-    margin: auto;
+    margin:  10px auto auto;
     width: 100%;
     align-items: center;
 }
@@ -28,7 +28,19 @@
     font-size: medium;
 }
 
-#campo-dados-cep input, #input-cep{
+#input-cep{
+    box-sizing: border-box;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    margin: auto;
+    padding-left: 10px;
+    width: 90%;
+    min-width: 175px;
+    font-size: medium;
+}
+
+#campo-dados-cep input{
     box-sizing: border-box;
     height: 35px;
     border-radius: 20px;
@@ -38,6 +50,10 @@
     width: 90%;
     min-width: 175px;
     font-size: medium;
+}
+
+#campo-dados-cep input:disabled{
+    background-color: rgba(255, 255, 255, 0.75);
 }
 
 
