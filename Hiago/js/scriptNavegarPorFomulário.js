@@ -39,11 +39,17 @@ function proximaEtapa() {
     //if (!verificarInputsPreenchidos()) return;
 
     if (etapaAtual < etapas.length - 1) {
-        document.querySelector(".botao-voltar").style.display = "flex";
+        document.querySelector(".botao-voltar-etapa").style.display = "flex";
         document.querySelector("#numero-etapa").innerHTML = `${etapaAtual + 2}`;
         etapaAtual++;
         mostrarEtapa();
         atualizarBarras();
+        if (etapaAtual == 1) {
+            if (window.getComputedStyle(campoVerificacao).display === 'flex') {
+                inputs[0].focus();
+            }
+        }
+
     } else {
         document.getElementById("formulario-cria-conta").submit(); // Envia o formulário na última etapa
     }
@@ -55,12 +61,17 @@ function voltarEtapa() {
         document.querySelector("#numero-etapa").innerHTML = `${etapaAtual + 1}`;
         mostrarEtapa();
         atualizarBarras();
-        document.querySelector(".botao-voltar").style.display = "none";
+        document.querySelector(".botao-voltar-etapa").style.display = "none";
     } else {
         etapaAtual--;
         document.querySelector("#numero-etapa").innerHTML = `${etapaAtual + 1}`;
         mostrarEtapa();
         atualizarBarras();
+        if (etapaAtual == 1) {
+            if (window.getComputedStyle(campoVerificacao).display === 'flex') {
+                inputs[0].focus();
+            }
+        }
     }
 }
 

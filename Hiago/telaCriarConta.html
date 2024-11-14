@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/styleCampoImagem.css">
     <link rel="stylesheet" href="css/styleCampoCep.css">
     <link rel="stylesheet" href="css/reset.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -27,12 +28,14 @@
         <div class="campo-conteudo">
             <div class="estilo-fundo-formulario">
                 <form action="*" id="formulario-cria-conta">
-                    <button type="button" class="botao-voltar" onclick="voltarEtapa()" style="display: none;">Voltar</button> 
+                    <button type="button" class="botao-voltar-etapa" onclick="voltarEtapa()"
+                        style="display: none;">Voltar</button>
                     <img id="logo-mobile" src="../imagens/Cidadania Ativa.png" alt="Logo Cidadania Ativa">
                     <div class="campo-input-dados-basicos" style="display: none;">
                         <input class="input-dados-basicos" type="text" placeholder="Nome" id="input-nome">
 
-                        <input class="input-dados-basicos" type="email" id="input-email" placeholder="Email" oninput="transferirEmail(event)">
+                        <input class="input-dados-basicos" type="email" id="input-email" placeholder="Email"
+                            oninput="transferirEmail(event)">
 
                         <input class="input-dados-basicos" type="password" id="input-senha" placeholder="Senha">
 
@@ -41,25 +44,32 @@
                     </div>
 
                     <div class="campo-verificacao-email">
-                        <div id="texto-campo-verificacao">
-                            <h3>Foi enviado um código para o Email <span id="span-endereco-email">email</span>,
-                                adicione este
-                                códigoa a baixo</h3>
+                        <div id="campo-input-verificacao-email">
+                            <div id="texto-campo-verificacao">
+                                <h3>Foi enviado um código para o Email <span id="span-endereco-email">email</span>,
+                                    adicione este
+                                    código abaixo</h3>
+                            </div>
+                            <div id="inputs-codigo-verificacao">
+                                <input class="input-codigo" type="number">
+                                <input class="input-codigo" type="number" disabled>
+                                <input class="input-codigo" type="number" disabled>
+                                <input class="input-codigo" type="number" disabled>
+                                <input class="input-codigo" type="number" disabled>
+                            </div>
+                            <div id="campo-botoes-de-solucao">
+                                <button type="button" class="botoes-de-solucao" id="botao-nao-acesso-email">Não tenho acesso a esse
+                                    email</button>
+                                <button type="button" class="botoes-de-solucao" id="botao-enviar-novamente">Enviar o código
+                                    novamente</button>
+                            </div>
+                            <button type="button" id="botao-verificar">verificar</button>
                         </div>
-                        <div id="inputs-codigo-verificacao">
-                            <input class="input-codigo" type="number">
-                            <input class="input-codigo" type="number" disabled>
-                            <input class="input-codigo" type="number" disabled>
-                            <input class="input-codigo" type="number" disabled>
-                            <input class="input-codigo" type="number" disabled>
+                        <div id="campo-conclusao-verificacao-email"  style="display: none;">
+                            <i class="bi bi-shield-fill-check"></i>
+                            <h3>Verificação concluída</h3>
+                            <h4>Avance para a próxima etapa.</h4>
                         </div>
-                        <div id="campo-botoes-de-solucao">
-                            <button type="button" class="botoes-de-solucao" id="botao-nao-acesso-email">Não tenho acesso a esse
-                                email</button>
-                            <button type="button" class="botoes-de-solucao" id="botao-enviar-novamente">Enviar o código
-                                novamente</button>
-                        </div>
-                        <button type="button" id="botao-verificar">verificar</button>
                     </div>
                     <div class="campo-verificacao-cep">
                         <div id="campo-cep">
@@ -77,7 +87,7 @@
                         <div id="botaoIniciar">
                             <h2>Tire uma foto para seu perfil</h2>
                             <button type="button" id="startButton" onclick="iniciarGravacao()">
-                                <div id="div-iconCamera" class="antes-de-tirar-foto" >
+                                <div id="div-iconCamera" class="antes-de-tirar-foto">
                                     <img src="../../imagens/iconeCamera.png" alt="Icone de Câmera">
                                 </div>
                             </button>
@@ -87,15 +97,18 @@
                             <h2>Tire uma foto para seu perfil</h2>
                             <canvas id="inicio">
                             </canvas>
-                            <button type="button" id="startButtonDespois" onclick="confirmarTirarFoto()">Tirar outra foto</button>
+                            <button type="button" id="startButtonDespois" onclick="confirmarTirarFoto()">Tirar outra
+                                foto</button>
                         </div>
 
 
                         <div id="campoVisualizacao" style="display: none;">
                             <div class="botao-voltar">
-                                <button type="button" id="stopButton" onclick="pararGravacao()"><i class="bi bi-arrow-left"></i>Voltar</button>
+                                <button type="button" id="stopButton" onclick="pararGravacao()"><i
+                                        class="bi bi-arrow-left"></i>Voltar</button>
 
-                                <button type="button" onclick="trocarCamera()" id="botaotrocarCamera">Trocar câmera</button>
+                                <button type="button" onclick="trocarCamera()" id="botaotrocarCamera">Trocar
+                                    câmera</button>
                             </div>
                             <video autoplay style="display: none;"></video>
                             <canvas style="display: none;" id="campo-mostrar-imagem"></canvas>
@@ -147,6 +160,7 @@
             });
         });
     </script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="./js/scriptCamera.js"></script>
     <script src="./js/scriptCep.js"></script>
     <script src="./js/scriptNavegarPorFomulário.js"></script>

@@ -84,7 +84,7 @@ function iniciarGravacao() {
             document.querySelector('#buttonFoto').style.display = "block";
             document.querySelector('#stopButton').style.display = "block";
             document.querySelector('#logo-mobile').style.display = "none";
-            document.querySelector('.botao-voltar').style.display = "none";
+            document.querySelector('.botao-voltar-etapa').style.display = "none";
             document.querySelector('.botao-proximo').style.display = "none";
             document.querySelector('.etapas-descricao').style.display = "none";
         })
@@ -139,6 +139,8 @@ function tirarOutraFoto() {
             document.querySelector('#stopButton').style.display = "block";
             document.querySelector('.botao-proximo').style.display = "none";
             document.querySelector('.etapas-descricao').style.display = "none";
+            document.querySelector('.botao-voltar-etapa').style.display = "none";
+            document.querySelector('.botao-voltar-etapa').style.display = "none";
         })
         .catch(error => {
             console.log(error);
@@ -176,6 +178,7 @@ function pararGravacao() {
     }
     document.querySelector('.botao-proximo').style.display = "block";
     document.querySelector('.etapas-descricao').style.display = "flex";
+    document.querySelector('.botao-voltar-etapa').style.display = "flex";
 }
 
 function tirarFoto() {
