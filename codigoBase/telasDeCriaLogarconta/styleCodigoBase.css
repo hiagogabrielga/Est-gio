@@ -41,6 +41,14 @@ main{
     display: none; /* Esconde a imagem original */
 }
 
+input[type="password"]::-webkit-textfield-decoration-container {
+    display: none;
+}
+
+/* Para navegadores baseados em Blink (Edge) */
+input[type="password"]::-ms-reveal {
+    display: none;
+}
 
 #logo {
     width: 300px;

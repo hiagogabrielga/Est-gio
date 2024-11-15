@@ -28,12 +28,29 @@
     font-size: medium;
 }
 
-#input-cep{
+.campo-input-cep{
     box-sizing: border-box;
     height: 40px;
     border-radius: 20px;
     border: none;
     margin: auto;
+    width: 90%;
+    min-width: 175px;
+    font-size: medium;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding-right: 15px;
+    justify-content: space-between;
+}
+
+
+#input-cep{
+    box-sizing: border-box;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    margin: auto 0;
     padding-left: 10px;
     width: 90%;
     min-width: 175px;

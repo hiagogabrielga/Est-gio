@@ -23,7 +23,7 @@ function listarDispositivos() {
         .then(devices => {
             const videoDevices = devices.filter(device => device.kind === 'videoinput');
             if (videoDevices.length == 0 || videoDevices.length == 1) {
-                document.querySelector("#botaotrocarCamera").style.display = "none"
+                document.querySelector("#botaotrocarCamera").style.display = "block"
             } else {
                 document.querySelector("#botaotrocarCamera").style.display = "block"
 
@@ -55,7 +55,6 @@ function trocarCamera() {
 }
 
 function iniciarGravacao() {
-    var facingMode;
     if (facingMode === 'environment') {
         facingMode = 'user';
     } else if (facingMode === 'user'){

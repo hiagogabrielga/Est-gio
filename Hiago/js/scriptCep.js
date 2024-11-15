@@ -1,4 +1,4 @@
-const cep = document.querySelector('#input-cep');
+let cep = document.querySelector('#input-cep');
 const cidade = document.querySelector('#input-cidade');
 const bairro = document.querySelector('#input-bairro');
 const rua = document.querySelector('#input-rua');
@@ -18,13 +18,14 @@ function habilitarInputsCep() {
 
 cep.addEventListener('focusout', async () => {
     try {
+        cep = cep.value.replace("-","")
         const apenasNumeros = /^[0-9]+$/;
         const cepValido = /^[0-9]{8}$/;
 
-        if (!apenasNumeros.test(cep.value) || !cepValido.test(cep.value))
+        if (!apenasNumeros.test(cep) || !cepValido.test(cep))
             throw { cep_error: 'Cep inválido' }
 
-        const response = await fetch(`https://viacep.com.br/ws/${cep.value}/json/`)
+        const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`)
         if (!response.ok) {
             throw await response.json();
         }
