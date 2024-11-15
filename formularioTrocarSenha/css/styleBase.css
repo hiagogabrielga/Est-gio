@@ -1,0 +1,221 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+:root {
+    --verde: #2BD83C;
+    --verde-musgo-claro: #285943;
+    --verde-musgo-escuro: #002400;
+    --verde-claro: #86E990;
+    --verde-limao: #A1FF7E;
+    --cor-escura: #0C0C0C;
+    --cor-clara: #F0F2EF;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    /*background-image: url('../../imagens/Vilhena-751x420.png');
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center; */
+    background-color: #444444;
+    display: flex;
+}
+
+main{
+    display: flex;
+}
+
+#imagem-fundo-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url('../../imagens/Vilhena-751x420.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#imagem-fundo-desktop {
+    display: none; /* Esconde a imagem original */
+}
+
+
+#logo {
+    width: 300px;
+    position: relative;
+    margin: 40px auto;
+}
+
+.estilo-fundo-formulario{
+    background-color: #2bd83c48;
+    position: relative;
+    display: flex;
+    border-radius: 0px 20px 20px 0px;
+    width: 50vw;
+    height: 100vh;
+}
+
+.estilo-tela-login {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+#fomulario-eqSenha{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    height: 75vh;
+}
+
+#fomulario-eqSenha>input::placeholder{
+    font-size: large;
+}
+
+.botao-proximo{
+    color: white;
+    background-color: var(--verde);
+    box-shadow:  0px 0px 10px var(--verde);
+    width: 197px;
+    height: 49px;
+    border: none;
+    border-radius: 20px;
+    font-size: large;
+    margin: 0 auto;
+    transition: all 0.2s;
+}
+
+.botao-proximo:hover{
+    background-color: #26a533;
+}
+
+.etapas-descricao {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 20px auto ;
+    margin: auto auto 15px;
+    font-size: 20px;
+}
+
+.etapas-descricao > h3{
+    margin: auto auto 5px;
+}
+
+.barras{
+    display: flex;
+    justify-content: space-around;
+    width: 40vw;
+    margin: 10px auto 5px;
+}
+
+.barra{
+    background-color: #ffffff7a;
+    width: 24%;
+    border-radius: 20px;
+    height: 10px;
+    transition: 0.3s;
+}
+
+.botao-voltar-etapa{
+    font-size: 15px;
+    position: absolute;
+    width: 125px;
+    height: 35px;
+    align-items: center;
+    border-radius: 20px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 15px;
+    left: 15px;
+    transition: all 0.2s;
+}
+
+.botao-voltar-etapa:hover{
+    background-color: #cecece;
+}
+
+.titulo-e-eslogam{
+    position: relative;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+
+input[type="password"]::-webkit-textfield-decoration-container {
+    display: none;
+}
+
+/* Para navegadores baseados em Blink (Edge) */
+input[type="password"]::-ms-reveal {
+    display: none;
+}
+
+.titulo-e-eslogam>h2{
+    font-size: 26px;
+}
+
+.campo-imagem-logo{
+    width: 50%;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+}
+
+.campo-conteudo{
+    display: flex;
+    justify-content: space-around;
+    width: 100vw;
+}
+
+.decoracao-mobile{
+    display: none;
+    position: relative;
+}
+
+.decoracao-telas-login {
+    position: absolute;
+    width: 100%;
+}
+
+.decoracao {
+    position: relative;
+}
+
+#logo-mobile {
+    width: 150px;
+    position: relative;
+    display: none;
+    margin: 70px auto 10px;
+}
+
+@media screen and (max-width: 700px){
+    .campo-imagem-logo{
+        display: none;
+    }
+    .estilo-fundo-formulario{
+        background-color: transparent;
+        width: 89vw;
+    }
+
+    .decoracao-mobile{
+        display: block;
+    }
+
+    #fomulario-eqSenha{
+        margin: 0 auto;
+        height: 95vh;
+        width: 90vw;
+    }
+
+    #logo-mobile{
+        display: block;
+    }
+
+    .barras{
+        width: 80vw;
+    }
+}
