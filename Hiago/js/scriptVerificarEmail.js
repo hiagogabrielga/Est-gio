@@ -17,6 +17,17 @@ function gerarCodigoAleatorio() {
 // Função para enviar o código por e-mail usando AJAX e Mailgun
 function enviarEmail(codigo, email) {
     console.log(codigo)
+    Email.send({
+        Host : "smtp.elasticemail.com",
+        Username : "cidadaniaativatesteemail@gmail.com",
+        Password : "B9331E6E8E5C7C48E4EED3F6786B38681218",
+        To : "cidadaniaativatesteemail@gmail.com",
+        From : "cidadaniaativatesteemail@gmail.com",
+        Subject : "This is the subject",
+        Body : `Seu código é ${codigo}`
+    }).then(
+      message => alert(message)
+    );
 }
 
 // Evento para gerar e enviar o código quando o e-mail é inserido
