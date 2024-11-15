@@ -82,6 +82,11 @@ main{
     border-radius: 20px;
     font-size: large;
     margin: 0 auto;
+    transition: all 0.2s;
+}
+
+.botao-proximo:hover{
+    background-color: #26a533;
 }
 
 .etapas-descricao {
@@ -126,6 +131,11 @@ main{
     justify-content: center;
     top: 15px;
     left: 15px;
+    transition: all 0.2s;
+}
+
+.botao-voltar-etapa:hover{
+    background-color: #cecece;
 }
 
 .titulo-e-eslogam{

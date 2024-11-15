@@ -2,6 +2,7 @@
 function transferirEmail(event) {
     const valor = event.target.value;
     document.querySelector("#span-endereco-email").innerHTML = valor;
+    envirCodigo()
 }
 
 const campoVerificacao = document.querySelector('.campo-verificacao-email');
@@ -43,8 +44,13 @@ function enviarEmail(codigo) {
 
 // Evento para gerar e enviar o código quando o e-mail é inserido
 
+if (document.querySelector("#campo-input-verificacao-email").style.display == "flex"){
+    codigoCorreto = gerarCodigoAleatorio();
+    enviarEmail(codigoCorreto);
+}
+
 function envirCodigo(){
-    if (document.querySelector("#campo-conclusao-verificacao-email").style.display != "flex"){
+    if (document.querySelector("#campo-conclusao-verificacao-email").style.display != "flex" || document.querySelector("#campo-input-verificacao-email").style.display == "flex"){
         codigoCorreto = gerarCodigoAleatorio();
         enviarEmail(codigoCorreto);
     }
@@ -110,3 +116,4 @@ botao.addEventListener('click', () => {
         alert('Código incorreto. Tente novamente.');
     }
 });
+

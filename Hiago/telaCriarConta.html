@@ -13,13 +13,13 @@
     <link rel="stylesheet" href="css/reset.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="shortcut icon"  type="imagex/png" href="../../imagens/Cidadania Ativa (1) 1.icon">
+    <link rel="shortcut icon" type="imagex/png" href="../imagens/Cidadania Ativa (1) 1.icon">
 </head>
 
 <body>
     <main>
         <div id="imagem-fundo-container">
-            <img id="imagem-fundo-desktop" src="../../imagens/Vilhena-751x420.png" alt="Imagem de fundo">
+            <img id="imagem-fundo-desktop" src="../imagens/Vilhena-751x420.png" alt="Imagem de fundo">
             <div class="decoracao-mobile">
                 <div class="decoracao">
                     <img class="decoracao-telas-login" src="../imagens/Rectangle 5.png" alt="">
@@ -121,10 +121,17 @@
                         <div id="campo-cep">
                             <span id="message"></span>
                             <div class="campo-input-cep">
-                               <input id="input-cep" placeholder="Cep">
-                               <i class="bi bi-geo-alt-fill"></i> 
+                                <input id="input-cep" placeholder="Cep">
+                                <i class="bi bi-geo-alt-fill"></i>
                             </div>
-                            
+                            <script>
+                                document.getElementById('input-cep').addEventListener('focus', function () {
+                                    document.querySelector('.campo-input-cep').classList.add('focus');
+                                });
+                                document.getElementById('input-cep').addEventListener('blur', function () {
+                                    document.querySelector('.campo-input-cep').classList.remove('focus');
+                                });
+                            </script>
                         </div>
                         <div id="campo-dados-cep">
                             <input id="input-estado" type="text" placeholder="Estado" disabled>

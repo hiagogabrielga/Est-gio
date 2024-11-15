@@ -23,7 +23,7 @@ function listarDispositivos() {
         .then(devices => {
             const videoDevices = devices.filter(device => device.kind === 'videoinput');
             if (videoDevices.length == 0 || videoDevices.length == 1) {
-                document.querySelector("#botaotrocarCamera").style.display = "block"
+                document.querySelector("#botaotrocarCamera").style.display = "none"
             } else {
                 document.querySelector("#botaotrocarCamera").style.display = "block"
 
