@@ -15,27 +15,41 @@ function gerarCodigoAleatorio() {
 }
 
 // Função para enviar o código por e-mail usando AJAX e Mailgun
-function enviarEmail(codigo, email) {
-    console.log(codigo)
-    Email.send({
-        Host : "smtp.elasticemail.com",
-        Username : "cidadaniaativatesteemail@gmail.com",
-        Password : "B9331E6E8E5C7C48E4EED3F6786B38681218",
-        To : "cidadaniaativatesteemail@gmail.com",
-        From : "cidadaniaativatesteemail@gmail.com",
-        Subject : "This is the subject",
-        Body : `Seu código é ${codigo}`
-    }).then(
-      message => alert(message)
-    );
+function enviarEmail(codigo) {
+    (function(){
+        emailjs.init({
+          publicKey: "zwGweWg3wEIF1Nbnc",
+        });
+     })();
+    var paramitos = {
+        sendername: document.querySelector("#input-nome").value,
+        to: document.querySelector("#input-email").value,
+        subject: document.querySelector("#input-email").value,
+        replyto: "cidadaniaativatesteemail@gmail.com",
+        message: codigo
+    };
+
+    var serviceId = "service_8mgi0f3";
+    var templateId = "template_pgl2yvf";
+    emailjs.send(serviceId, templateId, paramitos)
+    .then(() => {
+        console.log("enviado corretamente")
+    })
+    .catch((error) => {
+        console.error('Erro ao enviar e-mail:', error);
+        alert('Não foi possível enviar o e-mail. Verefique se informou o Email corretamente.');
+    });
 }
 
 // Evento para gerar e enviar o código quando o e-mail é inserido
-document.querySelector('#input-email').addEventListener('input', (event) => {
-    const email = event.target.value;
-    codigoCorreto = gerarCodigoAleatorio();
-    enviarEmail(codigoCorreto, email);
-});
+
+function envirCodigo(){
+    if (document.querySelector("#campo-conclusao-verificacao-email").style.display != "flex"){
+        codigoCorreto = gerarCodigoAleatorio();
+        enviarEmail(codigoCorreto);
+    }
+    
+}
 
 inputs.forEach(input => {
     input.addEventListener('input', () => {

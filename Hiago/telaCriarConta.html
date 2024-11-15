@@ -11,8 +11,13 @@
     <link rel="stylesheet" href="css/styleCampoImagem.css">
     <link rel="stylesheet" href="css/styleCampoCep.css">
     <link rel="stylesheet" href="css/reset.css">
+<<<<<<< HEAD
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="shortcut icon"  type="imagex/png" href="../../imagens/Cidadania Ativa (1) 1.icon">
+=======
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+>>>>>>> a3af7f2d1eb3cbe96601f2f0704f46501966c229
 </head>
 
 <body>
@@ -33,15 +38,55 @@
                         style="display: none;">Voltar</button>
                     <img id="logo-mobile" src="../imagens/Cidadania Ativa.png" alt="Logo Cidadania Ativa">
                     <div class="campo-input-dados-basicos" style="display: none;">
-                        <input class="input-dados-basicos" type="text" placeholder="Nome" id="input-nome">
+                        <div class="campo-nome">
+                            <input class="input-dados-basicos" type="text" placeholder="Nome" id="input-nome">
+                            <i class="bi bi-person-circle"></i>
+                        </div>
+                        <div class="campo-email">
+                            <input class="input-dados-basicos" type="email" id="input-email" placeholder="Email"
+                                oninput="transferirEmail(event)">
+                            <i class="bi bi-envelope-fill"></i>
+                        </div>
+                        <div class="senha">
+                            <input type="password" id="input-senha" required placeholder=" Nova Senha">
+                            <i class="bi bi-eye-fill" id="mostrar-senha"
+                                onclick="mostrarSenha('input-senha','mostrar-senha')"></i>
+                        </div>
+                        <div class="senha-de-confirmacao">
+                            <input type="password" id="input-senha-de-confirmacao" placeholder="Confirmar senha">
+                            <i class="bi bi-eye-fill" id="mostrar-senha-de-confirmacao"
+                                onclick="mostrarSenha('input-senha-de-confirmacao','mostrar-senha-de-confirmacao')"></i>
+                        </div>
+                        <script>
 
-                        <input class="input-dados-basicos" type="email" id="input-email" placeholder="Email"
-                            oninput="transferirEmail(event)">
+                            document.getElementById('input-nome').addEventListener('focus', function () {
+                                document.querySelector('.campo-nome').classList.add('focus');
+                            });
+                            document.getElementById('input-nome').addEventListener('blur', function () {
+                                document.querySelector('.campo-nome').classList.remove('focus');
+                            });
 
-                        <input class="input-dados-basicos" type="password" id="input-senha" placeholder="Senha">
+                            document.getElementById('input-email').addEventListener('focus', function () {
+                                document.querySelector('.campo-email').classList.add('focus');
+                            });
+                            document.getElementById('input-email').addEventListener('blur', function () {
+                                document.querySelector('.campo-email').classList.remove('focus');
+                            });
 
-                        <input class="input-dados-basicos" type="password" id="input-confirmacao"
-                            placeholder="Confirmar senha">
+                            document.getElementById('input-senha').addEventListener('focus', function () {
+                                document.querySelector('.senha').classList.add('focus');
+                            });
+                            document.getElementById('input-senha').addEventListener('blur', function () {
+                                document.querySelector('.senha').classList.remove('focus');
+                            });
+
+                            document.getElementById('input-senha-de-confirmacao').addEventListener('focus', function () {
+                                document.querySelector('.senha-de-confirmacao').classList.add('focus');
+                            });
+                            document.getElementById('input-senha-de-confirmacao').addEventListener('blur', function () {
+                                document.querySelector('.senha-de-confirmacao').classList.remove('focus');
+                            });
+                        </script>
                     </div>
 
                     <div class="campo-verificacao-email">
@@ -59,14 +104,18 @@
                                 <input class="input-codigo" type="number" disabled>
                             </div>
                             <div id="campo-botoes-de-solucao">
-                                <button type="button" class="botoes-de-solucao" id="botao-nao-acesso-email">Não tenho acesso a esse
+                                <button type="button" class="botoes-de-solucao" id="botao-nao-acesso-email"
+                                    onclick="voltarEtapa()">Não tenho
+                                    acesso a esse
                                     email</button>
-                                <button type="button" class="botoes-de-solucao" id="botao-enviar-novamente">Enviar o código
+                                <button type="button" class="botoes-de-solucao" id="botao-enviar-novamente"
+                                    onclick="envirCodigo()">Enviar o
+                                    código
                                     novamente</button>
                             </div>
                             <button type="button" id="botao-verificar">verificar</button>
                         </div>
-                        <div id="campo-conclusao-verificacao-email"  style="display: none;">
+                        <div id="campo-conclusao-verificacao-email" style="display: none;">
                             <i class="bi bi-shield-fill-check"></i>
                             <h3>Verificação concluída</h3>
                             <h4>Avance para a próxima etapa.</h4>
@@ -75,7 +124,11 @@
                     <div class="campo-verificacao-cep">
                         <div id="campo-cep">
                             <span id="message"></span>
-                            <input id="input-cep" placeholder="Cep">
+                            <div class="campo-input-cep">
+                               <input id="input-cep" placeholder="Cep">
+                               <i class="bi bi-geo-alt-fill"></i> 
+                            </div>
+                            
                         </div>
                         <div id="campo-dados-cep">
                             <input id="input-estado" type="text" placeholder="Estado" disabled>
@@ -89,7 +142,7 @@
                             <h2>Tire uma foto para seu perfil</h2>
                             <button type="button" id="startButton" onclick="iniciarGravacao()">
                                 <div id="div-iconCamera" class="antes-de-tirar-foto">
-                                    <img src="../../imagens/iconeCamera.png" alt="Icone de Câmera">
+                                    <img src="../imagens/iconeCamera.png" alt="Icone de Câmera">
                                 </div>
                             </button>
                         </div>
@@ -161,7 +214,7 @@
             });
         });
     </script>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="./js/scripts.js"></script>
     <script src="./js/scriptCamera.js"></script>
     <script src="./js/scriptCep.js"></script>
     <script src="./js/scriptNavegarPorFomulário.js"></script>

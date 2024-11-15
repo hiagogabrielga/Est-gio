@@ -135,6 +135,15 @@ main{
     text-align: center;
 }
 
+input[type="password"]::-webkit-textfield-decoration-container {
+    display: none;
+}
+
+/* Para navegadores baseados em Blink (Edge) */
+input[type="password"]::-ms-reveal {
+    display: none;
+}
+
 .titulo-e-eslogam>h2{
     font-size: 26px;
 }
