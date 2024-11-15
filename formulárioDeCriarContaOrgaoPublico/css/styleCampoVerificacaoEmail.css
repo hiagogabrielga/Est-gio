@@ -1,0 +1,164 @@
+@import url(styleBase.css);
+
+.campo-verificacao-email{
+    background-color: var(--verde-limao);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 60%;
+    border-radius: 10px;
+    margin: 0 auto 20px;
+    padding: 5%;
+    height: 40vh;
+}
+
+#campo-input-verificacao-email{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
+}
+
+#campo-conclusao-verificacao-email {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 70%;
+    cursor:context-menu;
+}
+
+#campo-conclusao-verificacao-email h3{
+    color: white;
+    font-size: 2.5vw;
+}
+
+#campo-conclusao-verificacao-email h4{
+    color: white;
+    font-size: 1.5vw;
+    margin: 10px 0;
+}
+
+#campo-conclusao-verificacao-email i{
+    color: white;
+    font-size: 70px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-codigo{
+    width: 35px;
+    height: 41px;
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+    color: transparent;
+    text-shadow: 0 0 0 black;
+    transition:  .1s ease-in-out;
+}
+
+.input-codigo::-webkit-inner-spin-button{
+    display: none;
+}
+
+.input-codigo:focus{
+    outline:2px solid black;
+    outline-offset: 3px;
+}
+
+#inputs-codigo-verificacao{
+    display: flex;
+    justify-content: space-around;
+}
+
+#span-endereco-email{
+    font-weight: bold;
+}
+
+#campo-botoes-de-solucao{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 35%;
+}
+
+.botoes-de-solucao{
+    background-color: var(--verde);
+    width: 75%;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+    text-align: left;
+    padding-left: 12px;
+    color: white;
+    transition: all 0.2s;
+}
+
+
+
+#botao-verificar{
+    color: white;
+    background-color: var(--verde);
+    pointer-events: none;
+    box-shadow:  0px 0px 10px var(--verde);
+    width: 157px;
+    height: 30px;
+    border: none;
+    border-radius: 20px;
+    font-size: large;
+    margin: 0 auto;
+    cursor: pointer;
+    opacity: .6;
+    transition: all 0.2s;
+}
+
+#botao-verificar.ativo{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#botao-verificar.ativo:hover, .botoes-de-solucao:hover{
+    background-color: #26a533;
+}
+
+@media screen and (max-width: 700px) {
+    .input-codigo{
+        width: 50px;
+        height: 60px;
+    }
+
+    .botoes-de-solucao{
+        width: 70%;
+    }
+
+    .campo-verificacao-email{
+        width: 80%;
+        height: 40vh;
+    }
+
+    #campo-conclusao-verificacao-email h3{
+        font-size: 7vw;
+    }
+    
+    #campo-conclusao-verificacao-email h4{
+        font-size: 5vw;
+    }
+}
+
+@media screen and (max-width: 430px){
+    .botoes-de-solucao{
+        width: 100%;
+    }  
+
+    .input-codigo{
+        width: 35px;
+        height: 41px;
+    }
+
+    .botoes-de-solucao{
+        text-align: center;
+        padding-left: 0;
+    }
+}

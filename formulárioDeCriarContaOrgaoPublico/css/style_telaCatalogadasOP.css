@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --verde: #2BD83C;
+    --verde-musgo-claro: #285943;
+    --verde-musgo-escuro: #002400;
+    --verde-claro: #86E990;
+    --verde-limao: #A1FF7E;
+    --cor-escura: #0C0C0C;
+    --cor-clara: #F0F2EF;
+    font-family: 'Roboto', sans-serif;
+}
+
+#texto_explicativo{
+    color: white;
+    font-size: 1.5rem;
+}
+
+.container-cadastrar-problema-responsavel{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.container-pai{
+    height: 90%;
+    margin: 10px auto 15px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#label-container-filho{
+    color: white;
+    font-size: 20px;
+    text-align: left;
+    margin: 0px 0px 12px;
+}
+
+.problemas-catalogados{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1% 1% 0px;
+    position: relative;
+}
+
+.problemas-catalogados::after{
+    content: "";
+    height: 1px;
+    width: 100%;
+    left: 0;
+    position: absolute;
+    background-color: black;
+}
+
+.problemas{
+    font-size: medium;
+}
+
+.responsavel{
+    font-size: 14px;
+}
+
+.responsavel strong{
+    font-weight: bolder;
+}
+
+.container-filho{
+    background-color: var(--cor-clara);
+    border: solid 10px var(--verde-limao);
+    border-radius: 10px;
+    width: 85%;
+    margin: 10px auto 20px;
+    min-height: 150px;
+    max-height: 200px;
+    overflow: auto;
+}
+
+#botao-adicionar-situacao{
+    width: 10rem;
+    background-color: var(--verde);
+    padding: .5rem;
+    font-size: 15px;
+    border: none;
+    border-radius: 1.5rem;
+    color: var(--cor-clara);
+    margin:0 auto;
+    box-shadow:  0px 0px 10px var(--verde);
+}
+
+
+@media screen and (max-width: 700px){
+    .campo-imagem-logo{
+        display: none;
+        margin: 0 auto;
+        height: 85vh;
+    }
+    .estilo-fundo-formulario{
+        background-color: transparent;
+        width: 89vw;
+    }
+
+    .barras{
+        width: 80vw;
+    }
+
+}
