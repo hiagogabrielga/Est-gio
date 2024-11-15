@@ -49,9 +49,9 @@ function validarSenhas() {
 
 
 function proximaEtapa() {
-    //if (!verificarInputsPreenchidos()) return;
+    if (!verificarInputsPreenchidos()) return;
 
-    /*if (etapas[etapaAtual] === "campo-verificacao-email") {
+    if (etapas[etapaAtual] === "campo-verificacao-email") {
         const conclusaoVerificacao = document.querySelector("#campo-conclusao-verificacao-email");
         if (conclusaoVerificacao.style.display !== "flex") {
             alert("Você precisa concluir a verificação do e-mail antes de continuar.");
@@ -64,7 +64,7 @@ function proximaEtapa() {
             return;
         }
 
-    }*/
+    }
 
     if (etapaAtual < etapas.length - 1) {
         document.querySelector(".botao-voltar-etapa").style.display = "flex";
